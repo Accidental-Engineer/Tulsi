@@ -15,7 +15,6 @@
     <!-- End of Title -->
 
     <!-- CSS -->
-      <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="./res/font/icon/flaticon.css">
     <!-- End of CSS -->
@@ -33,9 +32,32 @@
     <script>
       $(document).ready(function(){
           $("#menu").click(function(){
+            $("#side-menu").fadeToggle(0);
             $("#container-vid").toggleClass("wide");
             $("#container-vid").toggleClass("srink");
-            $("#side-menu").toggleClass("hide");
+            var c_vid_width =  $("#container-vid").width();
+            console.log(c_vid_width);
+            if(c_vid_width >= 1200){
+              console.log("1");
+              $(".vid").css("max-width","1105px");
+              $(".separator").css("width","1082px");
+            }
+            if(c_vid_width < 1200){
+              console.log("2");
+              $(".vid").css("max-width","887px");
+              $(".separator").css("width","864px");
+            }
+            if (c_vid_width < 992) {
+              console.log("3");
+              $(".vid").css("max-width","669px");
+              $(".separator").css("width","646px");
+            }
+            if (c_vid_width < 768) {
+              console.log("4");
+              $(".vid").css("max-width","451px");
+              $(".separator").css("width","428px");
+            }
+
           });
       });
     </script>
@@ -93,7 +115,7 @@
               <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-shapes font-xs" ></i>
               </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu dropdown-menu-right">
                   <h5 class="dropdown-header font-m">Categories</h5>
                   <a class="dropdown-item" href="#">Cardiology</a>
                   <a class="dropdown-item" href="#">Endocrinology</a>
@@ -111,10 +133,22 @@
                 <i class="flaticon-arrow font-xs"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="navbar-brand dark-icon no-pad-l no-pad-r" href="#">
+            <li class="nav-item btn-group">
+              <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-button-of-three-vertical-squares font-xs" ></i>
               </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Update Profile</a>
+                  <a class="dropdown-item" href="#">Add Family Member</a>
+                  <a class="dropdown-item" href="#">Clinical Record</a>
+                  <a class="dropdown-item" href="#">Subscriptions</a>
+                  <a class="dropdown-item" href="#">Privacy Policy</a>
+                  <a class="dropdown-item" href="#">Terms and Conditions</a>
+                  <a class="dropdown-item" href="#">Support</a>
+                  <a class="dropdown-item" href="#">FAQs</a>
+                  <a class="dropdown-item" href="#">Sign Out</a>
+                </div>
+
             </li>
             <li class="nav-item active no-pad-l no-pad-r">
               <a class="nav-link" href="#" style="padding-left: 5px  !important;">SIGN IN</a>
