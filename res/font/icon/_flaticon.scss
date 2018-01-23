@@ -1,6 +1,10 @@
     /*
     Flaticon icon font: Flaticon
+<<<<<<< HEAD
     Creation date: 23/01/2018 14:20
+=======
+    Creation date: 23/01/2018 13:07
+>>>>>>> d8964d92d0fbc0c1b32f6829c4bff1e389202f9e
     */
 
     @font-face {
@@ -36,6 +40,7 @@
   font-smoothing: antialiased;
     }
 
+<<<<<<< HEAD
     .flaticon-add-contact:before { content: "\f100"; }
 .flaticon-login:before { content: "\f101"; }
 .flaticon-mail:before { content: "\f102"; }
@@ -69,3 +74,34 @@
     $font-Flaticon-shapes: "\f10d";
     $font-Flaticon-button-of-three-vertical-squares: "\f10e";
     $font-Flaticon-line-menu: "\f10f";
+=======
+    .flaticon-mail:before { content: "\f100"; }
+.flaticon-speech-bubble-with-text-lines:before { content: "\f101"; }
+.flaticon-help-web-button:before { content: "\f102"; }
+.flaticon-settings-gears:before { content: "\f103"; }
+.flaticon-computer:before { content: "\f104"; }
+.flaticon-open-book:before { content: "\f105"; }
+.flaticon-history:before { content: "\f106"; }
+.flaticon-increasing-chart:before { content: "\f107"; }
+.flaticon-home:before { content: "\f108"; }
+.flaticon-arrow:before { content: "\f109"; }
+.flaticon-search:before { content: "\f10a"; }
+.flaticon-shapes:before { content: "\f10b"; }
+.flaticon-button-of-three-vertical-squares:before { content: "\f10c"; }
+.flaticon-line-menu:before { content: "\f10d"; }
+    
+    $font-Flaticon-mail: "\f100";
+    $font-Flaticon-speech-bubble-with-text-lines: "\f101";
+    $font-Flaticon-help-web-button: "\f102";
+    $font-Flaticon-settings-gears: "\f103";
+    $font-Flaticon-computer: "\f104";
+    $font-Flaticon-open-book: "\f105";
+    $font-Flaticon-history: "\f106";
+    $font-Flaticon-increasing-chart: "\f107";
+    $font-Flaticon-home: "\f108";
+    $font-Flaticon-arrow: "\f109";
+    $font-Flaticon-search: "\f10a";
+    $font-Flaticon-shapes: "\f10b";
+    $font-Flaticon-button-of-three-vertical-squares: "\f10c";
+    $font-Flaticon-line-menu: "\f10d";
+>>>>>>> d8964d92d0fbc0c1b32f6829c4bff1e389202f9e
