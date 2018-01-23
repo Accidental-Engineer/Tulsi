@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 21/01/2018 23:31
+    Creation date: 23/01/2018 14:20
     */
 
     @font-face {
@@ -36,14 +36,36 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-arrow:before { content: "\f100"; }
-.flaticon-search:before { content: "\f101"; }
-.flaticon-shapes:before { content: "\f102"; }
-.flaticon-button-of-three-vertical-squares:before { content: "\f103"; }
-.flaticon-line-menu:before { content: "\f104"; }
+    .flaticon-add-contact:before { content: "\f100"; }
+.flaticon-login:before { content: "\f101"; }
+.flaticon-mail:before { content: "\f102"; }
+.flaticon-speech-bubble-with-text-lines:before { content: "\f103"; }
+.flaticon-help-web-button:before { content: "\f104"; }
+.flaticon-settings-gears:before { content: "\f105"; }
+.flaticon-computer:before { content: "\f106"; }
+.flaticon-open-book:before { content: "\f107"; }
+.flaticon-history:before { content: "\f108"; }
+.flaticon-increasing-chart:before { content: "\f109"; }
+.flaticon-home:before { content: "\f10a"; }
+.flaticon-arrow:before { content: "\f10b"; }
+.flaticon-search:before { content: "\f10c"; }
+.flaticon-shapes:before { content: "\f10d"; }
+.flaticon-button-of-three-vertical-squares:before { content: "\f10e"; }
+.flaticon-line-menu:before { content: "\f10f"; }
     
-    $font-Flaticon-arrow: "\f100";
-    $font-Flaticon-search: "\f101";
-    $font-Flaticon-shapes: "\f102";
-    $font-Flaticon-button-of-three-vertical-squares: "\f103";
-    $font-Flaticon-line-menu: "\f104";
+    $font-Flaticon-add-contact: "\f100";
+    $font-Flaticon-login: "\f101";
+    $font-Flaticon-mail: "\f102";
+    $font-Flaticon-speech-bubble-with-text-lines: "\f103";
+    $font-Flaticon-help-web-button: "\f104";
+    $font-Flaticon-settings-gears: "\f105";
+    $font-Flaticon-computer: "\f106";
+    $font-Flaticon-open-book: "\f107";
+    $font-Flaticon-history: "\f108";
+    $font-Flaticon-increasing-chart: "\f109";
+    $font-Flaticon-home: "\f10a";
+    $font-Flaticon-arrow: "\f10b";
+    $font-Flaticon-search: "\f10c";
+    $font-Flaticon-shapes: "\f10d";
+    $font-Flaticon-button-of-three-vertical-squares: "\f10e";
+    $font-Flaticon-line-menu: "\f10f";

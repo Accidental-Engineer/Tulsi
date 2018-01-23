@@ -37,8 +37,20 @@
             $("#container-vid").toggleClass("srink");
             $("#side-menu").toggleClass("hide");
           });
-
+          $(".sign-in-overall").click(function(){
+            $(this).removeClass("disabled").addClass("active");
+            $(".sign-up-overall").removeClass("active").addClass("disabled");
+            $(".form-2").hide();
+            $(".form-1").show();
+          });
+          $(".sign-up-overall").click(function(){
+            $(this).removeClass("disabled").addClass("active");
+            $(".sign-in-overall").removeClass("active").addClass("disabled");
+            $(".form-1").hide();
+            $(".form-2").show();
+          });
       });
+
     </script>
     <!-- End of Script-->
     <style>
@@ -66,7 +78,9 @@
         /*input[type="text"]:focus::-webkit-input-placeholder {
           color: white;
         }*/
-
+        .form-2{
+          display: none;
+        }
         #login-form{
         height: 132px;
         width: 270px;
@@ -78,7 +92,7 @@
         .sign-in-btn{
           cursor: pointer;
           height: 36px;
-          width: 240px;
+          width: 100%;
           box-sizing: border-box;
           box-shadow: 0 0 2px gray;
           line-height: 36px;
@@ -108,7 +122,7 @@
 
 
          #contact {
-           margin-top: 35px;
+           margin-top: 50px;
            padding-right: 0 !important;
            padding-left: 20px !important;
          }
@@ -216,6 +230,8 @@
            transition: 0.2s ease all;
            -moz-transition: 0.2s ease all;
            -webkit-transition: 0.2s ease all;
+           margin-top: 25px;
+           margin-bottom: 15px;
          }
          #contact input[type=submit]:hover {
            background: #2b2b2b;
@@ -291,23 +307,20 @@
 
   <!-- Main Body -->
   <div class="container-fluid row-centered" style="height: calc(100vh - 62px); margin: 0;">
-    <div class = "row col-md-6 col-sm-12 col-centered container-fluid" style = "margin-top: 10px; box-shadow: 0 0 5px gray; padding: 25px;">
-      <button class = "btn btn-primary col-md-6 active">Sign In</button><button class = "btn btn-info col-md-6 disabled">Sign Up</button>
-      <!--<span class = "col-md-12" style = 'text-align: left;'></span>-->
-      <div class = "row col-md-12 container-fluid" id = "contact">
+    <div class = "row col-md-5 col-sm-8 col-xs-12 col-centered container-fluid" style = "margin-top: 10px; box-shadow: 0 0 5px gray; padding: 25px;">
+      <button class = "btn btn-primary col-sm-6 active sign-in-overall">Sign In</button><button class = "btn btn-info col-sm-6 disabled sign-up-overall">Sign Up</button>
+      <div class = "form-1 row col-md-12 container-fluid" id = "contact">
 
-          <div class="group">
-            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Name</label>
-          </div>
           <div class="group">
             <input required="" type="email"><span class="highlight"></span><span class="bar"></span><label>Email</label>
           </div>
+          <div class="group">
+            <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
+          </div>
+          <span><small>Forgot Password?</small></span><!--<i class = "flaticon-login"></i>-->
           <input id="sendMessage" name="sendMessage" type="submit" value="Login">
 
-      </div>
-
-      <center><div id = "login-form" class = 'row col-md-12'>
-         <center><div id="google-sign-in" class="sign-in-btn"><div class = "login-btn-icon" style = "margin-right: 25px;">
+         <div id="google-sign-in" class="sign-in-btn"><div class = "login-btn-icon" style = "margin-right: 25px;">
 
            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -325,7 +338,7 @@
                                             C318.115,0,375.068,22.126,419.404,58.936z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
              <g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
 
-           </div><div class = "btn-text">Continue with Google</div></div></center><center>
+           </div><div class = "btn-text">Continue with Google</div></div>
         <div class = "sign-in-btn" id = "fb-sign-in" onclick = "login();"><div class = "login-btn-icon" style = "margin-right: 25px;">
 
 
@@ -340,10 +353,35 @@
             <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
 
 
-          </div><div class = "btn-text">Continue with Facebook</div></div></center>
+          </div><div class = "btn-text">Continue with Facebook</div></div>
       </div>
-    </center>
+
+
+      <div class = "form-2 row col-md-12 container-fluid" id = "contact">
+
+          <div class="group">
+            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>First Name</label>
+          </div>
+          <div class="group">
+            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Last Name</label>
+          </div>
+          <div class="group">
+            <input required="" type="email"><span class="highlight"></span><span class="bar"></span><label>Email</label>
+          </div>
+          <div class="group">
+            <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
+          </div>
+          <div class="group">
+            <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Retype Password</label>
+          </div>
+          <div class="group">
+            <input required="" type="date"><span class="highlight"></span><span class="bar"></span><label>D.O.B.</label>
+          </div>
+          <input id="sendMessage" name="sendMessage" type="submit" value="Register">
+
     </div>
+
+
   </div>
   <!-- End of Main Body -->
   </body>
