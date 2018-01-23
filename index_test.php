@@ -34,7 +34,59 @@
           $("#menu").click(function(){
             $("#side-menu").fadeToggle(20);
           });
+          console.log($(".vid-slide").width()/218);
+          var vid_body = $(".vid").width()+30;
+          var max_vid_width = $(".vid-slide").width();
+          console.log(vid_body);
+          console.log(max_vid_width);
+          if(max_vid_width < vid_body){
+            $(".vid-slide-right").css("display","none");
+            $(".vid-slide-left").css("display","none");
+          }
+          else {
+            $(".vid-slide-right").css("display","block");
+          }
       });
+      function more(element) {
+        var e =$(element).parent().children(".vid").children(".vid-slide");
+        var total_vid=e.width()/218;
+        var vid_body = $(".vid").width();
+        var max_vid_width = e.width();
+        var vid_hidden=(max_vid_width-vid_body)/218;
+        var check =vid_hidden*218;
+        if( check!= e.css("left").slice(0,-2)*-1 && check > e.css("left").slice(0,-2)*-1 ){
+          e.animate({left:'-=218px'},200);
+          $(element).siblings(".vid-slide-left").css("display","block");
+        }
+        if (check < e.css("left").slice(0,-2)*-1) {
+          e.animate({left:(-1*check)+"px"},200);
+          $(element).css("display","none");
+        }
+        if(check  -  e.css("left").slice(0,-2)*-1 <= 218 ){
+          e.animate({left:(-1*check)+"px"},200);
+          $(element).css("display","none");
+        }
+      }
+      function less(element) {
+        var e =$(element).parent().children(".vid").children(".vid-slide");
+        var total_vid=e.width()/218;
+        var vid_body = $(".vid").width();
+        var max_vid_width = e.width();
+        var vid_hidden=(max_vid_width-vid_body)/218;
+        var check = 0;
+        if( check!=  e.css("left").slice(0,-2) && check >  e.css("left").slice(0,-2) ){
+           e.animate({left:'+=218px'},200);
+          $(element).siblings(".vid-slide-right").css("display","block");
+        }
+        if(check <  e.css("left").slice(0,-2) ){
+           e.animate({left:'0px'},200);
+          $(element).css("display","none");
+        }
+        if(check -  e.css("left").slice(0,-2) <= 218 ){
+           e.animate({left:(0)+"px"},200);
+          $(element).css("display","none");
+        }
+      }
     </script>
     <!-- End of Script-->
   </head>
@@ -191,97 +243,128 @@
             </div>
           </div>
           <div class="row" style="display:inline; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick="less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x: hidden;margin-left: 15px;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
                   </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      The perfect treatment for diabetes and weight loss
+                  <!-- End new card -->
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
                     </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
                     </div>
                   </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        What to eat for healthy hair
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br> Dr. Rajput
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        17K views <b>&#183;</b> 8 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Expert Advise to Diabetics
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Deep Learning Frameworks Compared
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. N.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      4.6K views <b>&#183;</b> 1 day ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      How to Cure a Cold Fast
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. Joe Alex
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1M views <b>&#183;</b> 2 year ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      What to eat for healthy hair
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br> Dr. Rajput
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      17K views <b>&#183;</b> 8 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
+                <!-- End of Vid Cards -->
               </div>
             </div>
           </div>
@@ -300,97 +383,250 @@
             </div>
           </div>
           <div class="row" style="display:inline; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick=" less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x: hidden;margin-left: 15px;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
                   </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      The perfect treatment for diabetes and weight loss
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
                     </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
                     </div>
                   </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        What to eat for healthy hair
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br> Dr. Rajput
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        17K views <b>&#183;</b> 8 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                <!-- End of Vid Cards -->
+              </div>
+            </div>
+          </div>
+          <div class="row separator" style="margin-left: 19px;">
+            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
+
+            </div>
+          </div>
+        </div>
+        <!-- End of Videos Row 1-->
+        <!-- Videos Row 1-->
+        <div class="container vid-row" style="margin-top: 20px;" >
+          <div class="row" style="padding-left: 19px;padding-left: 19px;">
+            <div class="col-12 font-m" style="display:inline;">
+              Recommended
+            </div>
+          </div>
+          <div class="row" style="display:inline; margin:15px;">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick=" less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x: hidden;margin-left: 15px;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
                   </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Expert Advise to Diabetics
+                  <!-- End new card -->
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
                     </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
                     </div>
                   </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        What to eat for healthy hair
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br> Dr. Rajput
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        17K views <b>&#183;</b> 8 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Deep Learning Frameworks Compared
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. N.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      4.6K views <b>&#183;</b> 1 day ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      How to Cure a Cold Fast
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. Joe Alex
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1M views <b>&#183;</b> 2 year ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      What to eat for healthy hair
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br> Dr. Rajput
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      17K views <b>&#183;</b> 8 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
+                <!-- End of Vid Cards -->
               </div>
             </div>
           </div>
@@ -409,97 +645,128 @@
             </div>
           </div>
           <div class="row" style="display:inline; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick=" less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x: hidden;margin-left: 15px;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
                   </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      The perfect treatment for diabetes and weight loss
+                  <!-- End new card -->
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
                     </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
                     </div>
                   </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        What to eat for healthy hair
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br> Dr. Rajput
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        17K views <b>&#183;</b> 8 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Expert Advise to Diabetics
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Deep Learning Frameworks Compared
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. N.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      4.6K views <b>&#183;</b> 1 day ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      How to Cure a Cold Fast
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. Joe Alex
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1M views <b>&#183;</b> 2 year ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      What to eat for healthy hair
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br> Dr. Rajput
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      17K views <b>&#183;</b> 8 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
+                <!-- End of Vid Cards -->
               </div>
             </div>
           </div>
@@ -518,97 +785,110 @@
             </div>
           </div>
           <div class="row" style="display:inline; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick=" less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x: hidden;margin-left: 15px;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
                   </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      The perfect treatment for diabetes and weight loss
+                  <!-- End new card -->
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
                     </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
                     </div>
                   </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Expert Advise to Diabetics
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Deep Learning Frameworks Compared
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. N.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      4.6K views <b>&#183;</b> 1 day ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      How to Cure a Cold Fast
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. Joe Alex
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1M views <b>&#183;</b> 2 year ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      What to eat for healthy hair
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br> Dr. Rajput
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      17K views <b>&#183;</b> 8 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
+                <!-- End of Vid Cards -->
               </div>
             </div>
           </div>
@@ -619,115 +899,7 @@
           </div>
         </div>
         <!-- End of Videos Row 1-->
-        <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-left: 19px;">
-            <div class="col-12 font-m" style="display:inline;">
-              Dr. NK Narayana
-            </div>
-          </div>
-          <div class="row" style="display:inline; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      The perfect treatment for diabetes and weight loss
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Expert Advise to Diabetics
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. K.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1.2K views <b>&#183;</b> 3 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      Deep Learning Frameworks Compared
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. N.P. Singh
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      4.6K views <b>&#183;</b> 1 day ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      How to Cure a Cold Fast
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br>Dr. Joe Alex
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      1M views <b>&#183;</b> 2 year ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-                <!-- new card -->
-                <div class="vid-card">
-                  <div class="">
-                    <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                  </div>
-                  <div style="height:40.935%;padding-top: 5px;">
-                    <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                      What to eat for healthy hair
-                    </div>
-                    <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                      <br> Dr. Rajput
-                    </div>
-                    <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                      17K views <b>&#183;</b> 8 months ago
-                    </div>
-                  </div>
-                </div>
-                <!-- End new card -->
-              </div>
-            </div>
-          </div>
-          <div class="row separator" style="margin-left: 19px;">
-            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
 
-            </div>
-          </div>
-        </div>
-        <!-- End of Videos Row 1-->
       </div>
     </div>
   </div>

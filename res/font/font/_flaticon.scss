@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 23/01/2018 15:49
+    Creation date: 23/01/2018 16:46
     */
 
     @font-face {
@@ -36,36 +36,40 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-add-contact:before { content: "\f100"; }
-.flaticon-login:before { content: "\f101"; }
-.flaticon-history:before { content: "\f102"; }
-.flaticon-mail:before { content: "\f103"; }
-.flaticon-computer:before { content: "\f104"; }
-.flaticon-open-book:before { content: "\f105"; }
-.flaticon-shapes:before { content: "\f106"; }
-.flaticon-help-web-button:before { content: "\f107"; }
-.flaticon-increasing-chart:before { content: "\f108"; }
-.flaticon-speech-bubble-with-text-lines:before { content: "\f109"; }
-.flaticon-arrow:before { content: "\f10a"; }
-.flaticon-settings-gears:before { content: "\f10b"; }
-.flaticon-button-of-three-vertical-squares:before { content: "\f10c"; }
-.flaticon-home:before { content: "\f10d"; }
-.flaticon-line-menu:before { content: "\f10e"; }
-.flaticon-search:before { content: "\f10f"; }
+    .flaticon-next:before { content: "\f100"; }
+.flaticon-back:before { content: "\f101"; }
+.flaticon-add-contact:before { content: "\f102"; }
+.flaticon-login:before { content: "\f103"; }
+.flaticon-history:before { content: "\f104"; }
+.flaticon-mail:before { content: "\f105"; }
+.flaticon-computer:before { content: "\f106"; }
+.flaticon-open-book:before { content: "\f107"; }
+.flaticon-shapes:before { content: "\f108"; }
+.flaticon-help-web-button:before { content: "\f109"; }
+.flaticon-increasing-chart:before { content: "\f10a"; }
+.flaticon-speech-bubble-with-text-lines:before { content: "\f10b"; }
+.flaticon-arrow:before { content: "\f10c"; }
+.flaticon-settings-gears:before { content: "\f10d"; }
+.flaticon-button-of-three-vertical-squares:before { content: "\f10e"; }
+.flaticon-home:before { content: "\f10f"; }
+.flaticon-line-menu:before { content: "\f110"; }
+.flaticon-search:before { content: "\f111"; }
     
-    $font-Flaticon-add-contact: "\f100";
-    $font-Flaticon-login: "\f101";
-    $font-Flaticon-history: "\f102";
-    $font-Flaticon-mail: "\f103";
-    $font-Flaticon-computer: "\f104";
-    $font-Flaticon-open-book: "\f105";
-    $font-Flaticon-shapes: "\f106";
-    $font-Flaticon-help-web-button: "\f107";
-    $font-Flaticon-increasing-chart: "\f108";
-    $font-Flaticon-speech-bubble-with-text-lines: "\f109";
-    $font-Flaticon-arrow: "\f10a";
-    $font-Flaticon-settings-gears: "\f10b";
-    $font-Flaticon-button-of-three-vertical-squares: "\f10c";
-    $font-Flaticon-home: "\f10d";
-    $font-Flaticon-line-menu: "\f10e";
-    $font-Flaticon-search: "\f10f";
+    $font-Flaticon-next: "\f100";
+    $font-Flaticon-back: "\f101";
+    $font-Flaticon-add-contact: "\f102";
+    $font-Flaticon-login: "\f103";
+    $font-Flaticon-history: "\f104";
+    $font-Flaticon-mail: "\f105";
+    $font-Flaticon-computer: "\f106";
+    $font-Flaticon-open-book: "\f107";
+    $font-Flaticon-shapes: "\f108";
+    $font-Flaticon-help-web-button: "\f109";
+    $font-Flaticon-increasing-chart: "\f10a";
+    $font-Flaticon-speech-bubble-with-text-lines: "\f10b";
+    $font-Flaticon-arrow: "\f10c";
+    $font-Flaticon-settings-gears: "\f10d";
+    $font-Flaticon-button-of-three-vertical-squares: "\f10e";
+    $font-Flaticon-home: "\f10f";
+    $font-Flaticon-line-menu: "\f110";
+    $font-Flaticon-search: "\f111";
