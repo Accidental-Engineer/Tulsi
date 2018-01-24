@@ -236,7 +236,7 @@
       <!-- End of Side Menu -->
       <div class="wide" id="container-vid">
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: column;" >
           <div class="row" style="padding-left: 19px;padding-left: 19px;">
             <div class="col-12 font-m" style="display:inline;">
               News Feed
@@ -376,7 +376,7 @@
         </div>
         <!-- End of Videos Row 1-->
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: column;" >
           <div class="row" style="padding-left: 19px;padding-left: 19px;">
             <div class="col-12 font-m" style="display:inline;">
               Recommended
@@ -498,7 +498,7 @@
         </div>
         <!-- End of Videos Row 1-->
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: column;" >
           <div class="row" style="padding-left: 19px;padding-left: 19px;">
             <div class="col-12 font-m" style="display:inline;">
               Recommended
@@ -638,7 +638,7 @@
         </div>
         <!-- End of Videos Row 1-->
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: column;" >
           <div class="row" style="padding-left: 19px;padding-left: 19px;">
             <div class="col-12 font-m" style="display:inline;">
               Trending
@@ -778,7 +778,7 @@
         </div>
         <!-- End of Videos Row 1-->
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: column;" >
           <div class="row" style="padding-left: 19px;padding-left: 19px;">
             <div class="col-12 font-m" style="display:inline;">
               Subscriptions

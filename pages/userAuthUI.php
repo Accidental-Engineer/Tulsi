@@ -38,14 +38,14 @@
             $("#side-menu").toggleClass("hide");
           });
           $(".sign-in-overall").click(function(){
-            $(this).removeClass("disabled").addClass("active");
-            $(".sign-up-overall").removeClass("active").addClass("disabled");
+            $(this).removeClass("my-disabled").addClass("my-active");
+            $(".sign-up-overall").removeClass("my-active").addClass("my-disabled");
             $(".form-2").hide();
             $(".form-1").show();
           });
           $(".sign-up-overall").click(function(){
-            $(this).removeClass("disabled").addClass("active");
-            $(".sign-in-overall").removeClass("active").addClass("disabled");
+            $(this).removeClass("my-disabled").addClass("my-active");
+            $(".sign-in-overall").removeClass("my-active").addClass("my-disabled");
             $(".form-1").hide();
             $(".form-2").show();
           });
@@ -119,13 +119,34 @@
          #google-sign-in{
            background: #4285f4;
          }
-
+         .sign-in-overall, .sign-up-overall{
+           background: #00efaf;
+           height: 40px;
+           color: white;
+           border: 2px solid white;
+           line-height: 36px;
+         }
+         .sign-in-overall:focus, .sign-up-overall:focus{
+           outline: 0;
+         }
+         .sign-up-overall{
+           background: #ef00c5; /* #f15922 */
+         }
+         .my-active{
+           opacity: 1;
+           box-shadow: 0 0 1px gray;
+         }
+         .my-disabled{
+           opacity: 0.6;
+           box-shadow: none;
+         }
 
          #contact {
-           margin-top: 50px;
+           margin-top: 40px;
            padding-right: 0 !important;
            padding-left: 20px !important;
          }
+
          #contact .slider-masks {
            background-color: rgba(129, 129, 129, 0.7);
            height: 100%;
@@ -308,11 +329,11 @@
   <!-- Main Body -->
   <div class="container-fluid row-centered" style="height: calc(100vh - 62px); margin: 0;">
     <div class = "row col-md-5 col-sm-8 col-xs-12 col-centered container-fluid" style = "margin-top: 10px; box-shadow: 0 0 5px gray; padding: 25px;">
-      <button class = "btn btn-primary col-sm-6 active sign-in-overall">Sign In</button><button class = "btn btn-info col-sm-6 disabled sign-up-overall">Sign Up</button>
+      <button class = "col-sm-6 my-active sign-in-overall"><i class = "flaticon-login"></i>Sign In</button><button class = "col-sm-6 my-disabled sign-up-overall"><i class = "flaticon-add-contact"></i>Sign Up</button>
       <div class = "form-1 row col-md-12 container-fluid" id = "contact">
 
           <div class="group">
-            <input required="" type="email"><span class="highlight"></span><span class="bar"></span><label>Email</label>
+            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Email</label>
           </div>
           <div class="group">
             <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
@@ -366,7 +387,7 @@
             <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Last Name</label>
           </div>
           <div class="group">
-            <input required="" type="email"><span class="highlight"></span><span class="bar"></span><label>Email</label>
+            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Email</label>
           </div>
           <div class="group">
             <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
@@ -374,9 +395,9 @@
           <div class="group">
             <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Retype Password</label>
           </div>
-          <div class="group">
+          <!--<div class="group">
             <input required="" type="date"><span class="highlight"></span><span class="bar"></span><label>D.O.B.</label>
-          </div>
+          </div>-->
           <input id="sendMessage" name="sendMessage" type="submit" value="Register">
 
     </div>
