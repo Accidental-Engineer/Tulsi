@@ -34,7 +34,7 @@
           $("#menu").click(function(){
             $("#side-menu").fadeToggle(20);
           });
-          console.log($(".vid-slide").width()/218);
+          console.log($(".vid-slide"));
           var vid_body = $(".vid").width()+30;
           var max_vid_width = $(".vid-slide").width();
           console.log(vid_body);
