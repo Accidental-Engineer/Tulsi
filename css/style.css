@@ -149,7 +149,7 @@ nav li {
   background: rgba(255,255,255,1);
   border-radius: 25px;
   top: 40px;
-	left: -4px;
+	left: -20px;
 	z-index: 1;
 	box-shadow: -2px 0px 10px rgba(100,100,100,0.5);
 	cursor: pointer;
@@ -160,7 +160,7 @@ nav li {
 	background: rgba(255,255,255,1);
 	position: absolute;
 	z-index: 1;
-	left: 1078px;
+	left: 1055px;
 	top: 40px;
 	width: 50px;
 	height: 50px;
@@ -174,43 +174,46 @@ nav li {
 	transform: scale(1.03);
 }
 
-.vid  {
+.vid-row-title, .vid  {
   max-width: 1090px;
+	width: 1090px;
 }
 .separator{
   width: 1082px;
 }
 @media screen and (max-width: 1200px){
-  .vid {
+  .vid-row-title, .vid {
     max-width: 872px;
+		width: 872px;
   }
   .separator{
     width: 864px;
   }
 	.vid-slide-right{
-		left: 860px;
+		left: 839px;
 	}
 }
 @media screen and (max-width: 992px){
-  .vid {
+  .vid-row-title, .vid {
     max-width: 654px;
+		width: 654px;
   }
   .separator{
     width: 646px;
   }
 	.vid-slide-right{
-		left: 642px;
+		left: 621px;
 	}
 }
 @media screen and (max-width: 768px){
-  .vid {
+  .vid-row-title, .vid {
     max-width: 436px;
   }
   .separator{
     width: 428px;
   }
 	.vid-slide-right{
-		left: 424px;
+		left: 403px;
 	}
 	#side-menu{
 		overflow-y: scroll;
