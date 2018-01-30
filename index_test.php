@@ -143,7 +143,7 @@
               <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-shapes font-xs" ></i>
               </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-menu dropdown-menu-right " style="top:49px;">
                   <h5 class="dropdown-header font-m">Categories</h5>
                   <a class="dropdown-item" href="#">Cardiology</a>
                   <a class="dropdown-item" href="#">Endocrinology</a>
@@ -165,7 +165,7 @@
               <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-button-of-three-vertical-squares font-xs" ></i>
               </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-menu dropdown-menu-right" style="top:49px;">
                   <a class="dropdown-item" href="#">Update Profile</a>
                   <a class="dropdown-item" href="#">Add Family Member</a>
                   <a class="dropdown-item" href="#">Clinical Record</a>

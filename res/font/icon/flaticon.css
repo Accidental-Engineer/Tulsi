@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 23/01/2018 16:46
+  	Creation date: 26/01/2018 19:42
   	*/
 
 @font-face {
@@ -21,29 +21,32 @@
   }
 }
 
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+[class^="flaticon-"], [class*=" flaticon-"],
+[class^="flaticon-"], [class*=" flaticon-"] {
   font-family: Flaticon;
-
 font-style: normal;
 margin-right: 20px;
 }
 
-.flaticon-next:before { content: "\f100"; }
-.flaticon-back:before { content: "\f101"; }
-.flaticon-add-contact:before { content: "\f102"; }
-.flaticon-login:before { content: "\f103"; }
-.flaticon-history:before { content: "\f104"; }
-.flaticon-mail:before { content: "\f105"; }
-.flaticon-computer:before { content: "\f106"; }
-.flaticon-open-book:before { content: "\f107"; }
-.flaticon-shapes:before { content: "\f108"; }
-.flaticon-help-web-button:before { content: "\f109"; }
+.flaticon-three-dots-more-indicator:before { content: "\f100"; }
+.flaticon-share-connection-sing:before { content: "\f101"; }
+.flaticon-hands:before { content: "\f102"; }
+.flaticon-thumb-up-button:before { content: "\f103"; }
+.flaticon-help-web-button:before { content: "\f104"; }
+.flaticon-home:before { content: "\f105"; }
+.flaticon-button-of-three-vertical-squares:before { content: "\f106"; }
+.flaticon-settings-gears:before { content: "\f107"; }
+.flaticon-arrow:before { content: "\f108"; }
+.flaticon-speech-bubble-with-text-lines:before { content: "\f109"; }
 .flaticon-increasing-chart:before { content: "\f10a"; }
-.flaticon-speech-bubble-with-text-lines:before { content: "\f10b"; }
-.flaticon-arrow:before { content: "\f10c"; }
-.flaticon-settings-gears:before { content: "\f10d"; }
-.flaticon-button-of-three-vertical-squares:before { content: "\f10e"; }
-.flaticon-home:before { content: "\f10f"; }
-.flaticon-line-menu:before { content: "\f110"; }
-.flaticon-search:before { content: "\f111"; }
+.flaticon-add-contact:before { content: "\f10b"; }
+.flaticon-history:before { content: "\f10c"; }
+.flaticon-back:before { content: "\f10d"; }
+.flaticon-search:before { content: "\f10e"; }
+.flaticon-shapes:before { content: "\f10f"; }
+.flaticon-login:before { content: "\f110"; }
+.flaticon-open-book:before { content: "\f111"; }
+.flaticon-computer:before { content: "\f112"; }
+.flaticon-mail:before { content: "\f113"; }
+.flaticon-next:before { content: "\f114"; }
+.flaticon-line-menu:before { content: "\f115"; }

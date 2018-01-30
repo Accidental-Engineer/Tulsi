@@ -32,34 +32,62 @@
     <script>
       $(document).ready(function(){
           $("#menu").click(function(){
-            $("#side-menu").fadeToggle(0);
-            $("#container-vid").toggleClass("wide");
-            $("#container-vid").toggleClass("srink");
-            var c_vid_width =  $("#container-vid").width();
-            console.log(c_vid_width);
-            if(c_vid_width >= 1200){
-              console.log("1");
-              $(".vid").css("max-width","1105px");
-              $(".separator").css("width","1082px");
-            }
-            if(c_vid_width < 1200){
-              console.log("2");
-              $(".vid").css("max-width","887px");
-              $(".separator").css("width","864px");
-            }
-            if (c_vid_width < 992) {
-              console.log("3");
-              $(".vid").css("max-width","669px");
-              $(".separator").css("width","646px");
-            }
-            if (c_vid_width < 768) {
-              console.log("4");
-              $(".vid").css("max-width","451px");
-              $(".separator").css("width","428px");
-            }
-
+            $("#side-menu").fadeToggle(20);
           });
+          console.log($(".vid-slide"));
+          var vid_body = $(".vid").width()+30;
+          var max_vid_width = $(".vid-slide").width();
+          console.log(vid_body);
+          console.log(max_vid_width);
+          if(max_vid_width < vid_body){
+            $(".vid-slide-right").css("display","none");
+            $(".vid-slide-left").css("display","none");
+          }
+          else {
+            $(".vid-slide-right").css("display","block");
+          }
       });
+      function more(element) {
+        var e =$(element).parent().children(".vid").children(".vid-slide");
+        var total_vid=e.width()/218;
+        var vid_body = $(".vid").width();
+        console.log(vid_body);
+        var max_vid_width = e.width();
+        var vid_hidden=(max_vid_width-vid_body)/218;
+        var check =vid_hidden*218;
+        if( check!= e.css("left").slice(0,-2)*-1 && check > e.css("left").slice(0,-2)*-1 ){
+          e.animate({left:'-=218px'},200);
+          $(element).siblings(".vid-slide-left").css("display","block");
+        }
+        if (check < e.css("left").slice(0,-2)*-1) {
+          e.animate({left:(-1*check)+"px"},200);
+          $(element).css("display","none");
+        }
+        if(check  -  e.css("left").slice(0,-2)*-1 <= 218 ){
+          e.animate({left:(-1*check)+"px"},200);
+          $(element).css("display","none");
+        }
+      }
+      function less(element) {
+        var e =$(element).parent().children(".vid").children(".vid-slide");
+        var total_vid=e.width()/218;
+        var vid_body = $(".vid").width();
+        var max_vid_width = e.width();
+        var vid_hidden=(max_vid_width-vid_body)/218;
+        var check = 0;
+        if( check!=  e.css("left").slice(0,-2) && check >  e.css("left").slice(0,-2) ){
+           e.animate({left:'+=218px'},200);
+          $(element).siblings(".vid-slide-right").css("display","block");
+        }
+        if(check <  e.css("left").slice(0,-2) ){
+           e.animate({left:'0px'},200);
+          $(element).css("display","none");
+        }
+        if(check -  e.css("left").slice(0,-2) <= 218 ){
+           e.animate({left:(0)+"px"},200);
+          $(element).css("display","none");
+        }
+      }
     </script>
     <!-- End of Script-->
   </head>
@@ -67,7 +95,7 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top" style="box-shadow: 0 0 8px rgba(0,0,0,0.5);">
-    <div class="container-fluid">
+    <div class="container-fluid" style="height: 46px;">
       <div class="  col-md-8 col-5">
         <ul class="navbar-nav" style="flex-direction: row;">
           <li class="nav-item">
@@ -94,7 +122,7 @@
             <form class="form-inline  show-search" id="search" action="/action_page.php" >
               <div class="input-group" style="width:100%;">
                 <input type="text" class="form-control" placeholder="Search"/>
-                <button class="input-group-addon" type="submit" style="cursor:pointer;"> <i class="flaticon-search font-xxs" style="margin-left:-20px; color:#777;"></i></button>
+                <button class="input-group-addon" type="submit" style="cursor:pointer;padding: 5px;"> <i class="flaticon-search font-xxs" style="position:relative;left:10px;color:#777;"></i></button>
               </div>
             </form>
           </li>
@@ -115,7 +143,7 @@
               <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-shapes font-xs" ></i>
               </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-menu dropdown-menu-right " style="top:49px;">
                   <h5 class="dropdown-header font-m">Categories</h5>
                   <a class="dropdown-item" href="#">Cardiology</a>
                   <a class="dropdown-item" href="#">Endocrinology</a>
@@ -137,7 +165,7 @@
               <a class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <i class="flaticon-button-of-three-vertical-squares font-xs" ></i>
               </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-menu dropdown-menu-right" style="top:49px;">
                   <a class="dropdown-item" href="#">Update Profile</a>
                   <a class="dropdown-item" href="#">Add Family Member</a>
                   <a class="dropdown-item" href="#">Clinical Record</a>
@@ -162,200 +190,193 @@
   <!-- Main Body -->
   <div class="container-fluid" style="height: calc(100vh - 62px);">
     <div class="row" style="height:100%">
-      <div class="hide" id="side-menu" style="width:240px;z-index: 1;box-shadow: 0px 6px 12px rgba(0,50,0,0.5);">
-        FD,SDS.
+      <!-- Side Menu -->
+      <div class="hide" id="side-menu" >
+        <div class="container-fluid" style="overflow-x: hidden;">
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-home font-s pad" ></i>Home</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-increasing-chart font-s pad" ></i>Trending</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-open-book font-s pad" ></i>Library</div></a>
+          </div>
+          <div class="row">
+            <div class="col-12 menu-separator"></div>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-history font-s pad" ></i>History</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-mail font-s pad" ></i>Subscriptions</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-computer font-s pad" ></i>Browse Chennels</div></a>
+          </div>
+          <div class="row">
+            <div class="col-12 menu-separator"></div>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-settings-gears font-s pad" ></i>Settings</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-help-web-button font-s pad" ></i>Help</div></a>
+          </div>
+          <div class="row">
+            <a href="#" class="no-style"><div class="col-12 menu-list-item"><i class="flaticon-speech-bubble-with-text-lines font-s pad" ></i>Feedback</div></a>
+          </div>
+          <div class="row">
+            <div class="col-12 menu-separator"></div>
+          </div>
+          <div class="row">
+            <div class="col-12 font-xs" style="line-height:50px;min-width:240px;text-align:center;color:rgba(100,100,100,0.3);">&copy; 2018 Tulsi Care</div>
+          </div>
+        </div>
       </div>
+      <!-- End of Side Menu -->
       <div class="wide" id="container-vid">
         <!-- Videos Row 1-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-right: 19px;float:right;">
-            <div class="col-12 font-m" style="display:inline;">
-              Recommended
+        <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: row;flex-wrap: wrap;" >
+          <div class="row vid-row-title">
+            <div class="col-12 font-m no-pad" style="display:inline;text-align:left;">
+              News Feed
             </div>
           </div>
-          <div class="row" style="display: inline;float: right; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-
+          <div class="row vid-inner-container" style="display:inline; margin:15px;">
+            <div class="col-12" style="padding: 0px; color:#777;">
+              <!-- Nav arrow -->
+              <div class="vid-slide-left" style="text-align:center;line-height:50px;" onclick="less(this)">
+                <b><i class="flaticon-back" style="position:relative;left:10px;"></i></b>
+              </div>
+              <div class="vid-slide-right" style="text-align:center;line-height:50px;" onclick="more(this)">
+                <b><i class="flaticon-next" style="position:relative;left:10px;"></i></b>
+              </div>
+              <!-- End Nav arrow -->
+              <div class="col-12 vid no-pad" style="display: flex;overflow-x:hidden;" >
+                <!-- Vid Cards -->
+                <div class="vid-slide" style="display: flex;position:relative;">
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- End new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        The perfect treatment for diabetes and weight loss
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Expert Advise to Diabetics
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. K.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1.2K views <b>&#183;</b> 3 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        Deep Learning Frameworks Compared
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. N.P. Singh
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        4.6K views <b>&#183;</b> 1 day ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        How to Cure a Cold Fast
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br>Dr. Joe Alex
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        1M views <b>&#183;</b> 2 year ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
+                  <!-- new card -->
+                  <div class="vid-card">
+                    <div class="">
+                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
+                    </div>
+                    <div style="height:40.935%;padding-top: 5px;">
+                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                        What to eat for healthy hair
+                      </div>
+                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                        <br> Dr. Rajput
+                      </div>
+                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                        17K views <b>&#183;</b> 8 months ago
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End new card -->
                 </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
+                <!-- End of Vid Cards -->
               </div>
             </div>
           </div>
-          <div class="row separator" style="float: right;margin-right: 19px;">
+          <div class="row separator" style="margin-left: 19px;">
             <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
 
             </div>
           </div>
         </div>
         <!-- End of Videos Row 1-->
-        <!-- Videos Row 2-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-right: 19px;float:right;">
-            <div class="col-12 font-m" style="display:inline;">
-              Recommended
-            </div>
-          </div>
-          <div class="row" style="display: inline;float: right; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
 
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row separator" style="float: right;margin-right: 19px;">
-            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
-
-            </div>
-          </div>
-        </div>
-        <!-- End of Videos Row 2-->
-        <!-- Videos Row 3-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-right: 19px;float:right;">
-            <div class="col-12 font-m" style="display:inline;">
-              Recommended
-            </div>
-          </div>
-          <div class="row" style="display: inline;float: right; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row separator" style="float: right;margin-right: 19px;">
-            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
-
-            </div>
-          </div>
-        </div>
-        <!-- End of Videos Row 3-->
-        <!-- Videos Row 4-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-right: 19px;float:right;">
-            <div class="col-12 font-m" style="display:inline;">
-              Recommended
-            </div>
-          </div>
-          <div class="row" style="display: inline;float: right; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row separator" style="float: right;margin-right: 19px;">
-            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
-
-            </div>
-          </div>
-        </div>
-        <!-- End of Videos Row 4-->
-        <!-- Videos Row 5-->
-        <div class="container vid-row" style="margin-top: 20px;" >
-          <div class="row" style="padding-left: 19px;padding-right: 19px;float:right;">
-            <div class="col-12 font-m" style="display:inline;">
-              Recommended
-            </div>
-          </div>
-          <div class="row" style="display: inline;float: right; margin:15px;">
-            <div class="col-12 vid" style="display: flex;overflow-x: hidden;" >
-              <div class="" style="display: flex;">
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-                <div class="vid-card">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row separator" style="float: right;margin-right: 19px;">
-            <div class="col-12" style="border-top: 1px solid rgba(170,170,170,0.3);">
-
-            </div>
-          </div>
-        </div>
-        <!-- End of Videos Row 5-->
       </div>
     </div>
   </div>
