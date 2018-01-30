@@ -238,8 +238,32 @@ nav li {
 	color: #5ea12c;
 	background: #ddd;
 }
+.comment-setting-reply{
+	opacity: 0;
+	line-height: 40px;
+  text-align: center;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+	-webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.comments-reply:hover .comment-setting-reply{
+	opacity: 1;
+	color: #777;
+}
+.comments-reply:hover .comment-setting-reply:hover{
+	opacity: 1;
+	color: #5ea12c;
+	background: #ddd;
+}
 .hover-icon:hover{
 	color: #5ea12c;
+}
+.comment-reply{
+	padding-left: 50px;
 }
 @media screen and (max-width: 1200px){
   .vid-row-title, .vid {

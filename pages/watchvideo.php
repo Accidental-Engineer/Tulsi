@@ -358,6 +358,33 @@
                     </div>
                   </div>
                 </div>
+                <!-- Comments -->
+                <!-- Comment 1 -->
+                <div class="row " style="justify-content: center;margin-top:30px;">
+                  <div class="comments" style="width:848px;display: flex;">
+                    <div class="col-10" style="padding: 0px;">
+                      <div style="display: flex;line-height: 1 !important;">
+                        <div class="pro-info"><img src="../res/img/pro3.jpg" style="width: 50px;height: 50px;"></div>
+                        <div style="padding: 0px 10px 0px 10px;">
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Sunny</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">This method is not as effective
+                            </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 8 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 2 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Comment 1 -->
+                <!-- Comment 2 -->
                 <div class="row " style="justify-content: center;margin-top:30px;">
                   <div class="comments" style="width:848px;display: flex;">
                     <div class="col-10" style="padding: 0px;">
@@ -370,8 +397,8 @@
                             <p style="margin-top:10px;">This method is not as effective for children younger than five. Often they are too young to know how to properly gargle
                             </p>
                           </span>
-                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 16 |</span>
-                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 1 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 5 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 2 <b>&#183;</b> </span>
                           <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
                         </div>
                       </div>
@@ -381,56 +408,131 @@
                     </div>
                   </div>
                 </div>
+                <!-- End of Comment 2 -->
+                <!-- Comment 2 reply -->
                 <div class="row " style="justify-content: center;margin-top:30px;">
-                  <div class="comments" style="width:848px;display: flex;">
-                    <div class="col-12" style="padding: 0px;">
+                  <div class="comments comment-reply" style="width:848px;display: flex;">
+                    <div class="col-10" style="padding: 0px;">
                       <div style="display: flex;line-height: 1 !important;">
                         <div class="pro-info"><img src="../res/img/pro2.jpg" style="width: 50px;height: 50px;"></div>
                         <div style="padding: 0px 10px 0px 10px;">
-                          <div style="display:flex;">
-                            <div class="col-10 no-pad">
-                              <span class="font-xs" style="line-height:1;color:#444"><strong>Tarun</strong></span>
-                              <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
-                              <span class="font-xs" style="color:#333;">
-                                <p style="margin-top:10px;">This method is not as effective for children younger than five. Often they are too young to know how to properly gargle
-                                  If you're not comfortable flushing your sinuses, you can also try using over-the-counter saline sprays. These products are simply squirted into the nostrils to soothe irritation and relieve stuffiness
-                                </p>
-                              </span>
-                            </div>
-                            <div class="col-2 no-pad" style="text-align:right;">
-                              <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
-                            </div>
-                          </div>
-                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 5 |</span>
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Tarun</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">This method is not as effective for children younger than five.                           </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 13 |</span>
                           <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 0 <b>&#183;</b> </span>
                           <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
-                          <div class="row " style="justify-content: center;margin-top:30px;">
-                            <div class="comments" style="width:848px;display: flex;">
-                              <div class="col-10" style="padding: 0px;">
-                                <div style="display: flex;line-height: 1 !important;">
-                                  <div class="pro-info"><img src="../res/img/pro3.jpg" style="width: 50px;height: 50px;"></div>
-                                  <div style="padding: 0px 10px 0px 10px;">
-                                    <span class="font-xs" style="line-height:1;color:#444"><strong>Sunny</strong></span>
-                                    <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
-                                    <span class="font-xs" style="color:#333;">
-                                      <p style="margin-top:10px;">This method is not as effective for children younger than five.
-                                      </p>
-                                    </span>
-                                    <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 0 |</span>
-                                    <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 0</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-2" style="text-align:right;">
-                                <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
                   </div>
                 </div>
+                <!-- End of Comment  2 reply -->
+                <!-- Comment  2 reply -->
+                <div class="row " style="justify-content: center;margin-top:30px;">
+                  <div class="comments comment-reply" style="width:848px;display: flex;">
+                    <div class="col-10" style="padding: 0px;">
+                      <div style="display: flex;line-height: 1 !important;">
+                        <div class="pro-info"><img src="../res/img/pro3.jpg" style="width: 50px;height: 50px;"></div>
+                        <div style="padding: 0px 10px 0px 10px;">
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Sunny</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">Often they are too young to know how to properly gargle
+                            </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 1 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 0 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Comment  2 reply -->
+                <!-- Comment  2 reply -->
+                <div class="row " style="justify-content: center;margin-top:30px;">
+                  <div class="comments comment-reply" style="width:848px;display: flex;">
+                    <div class="col-10" style="padding: 0px;">
+                      <div style="display: flex;line-height: 1 !important;">
+                        <div class="pro-info"><img src="../res/img/pro1.jpg" style="width: 50px;height: 50px;"></div>
+                        <div style="padding: 0px 10px 0px 10px;">
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Shivam</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 months ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">We employ strict cheating prevention techniques. The test window will be proctored and candidates will be warned once if they switch to some other window (chat, google search etc). Suspicious candidates will be disqualified from the contest.This method is not as effective for children younger than five. Often they are too young to know how to properly gargle
+                            </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 0 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 0 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Comment 2 reply -->
+                <!-- Comment 3 -->
+                <div class="row " style="justify-content: center;margin-top:30px;">
+                  <div class="comments" style="width:848px;display: flex;">
+                    <div class="col-10" style="padding: 0px;">
+                      <div style="display: flex;line-height: 1 !important;">
+                        <div class="pro-info"><img src="../res/img/pro2.jpg" style="width: 50px;height: 50px;"></div>
+                        <div style="padding: 0px 10px 0px 10px;">
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Tarun</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">1 months ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">for children younger than five. Often they are too young to know how to properly gargle
+                            </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 6 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 2 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Comment 3 -->
+                <!-- Comment 3 reply -->
+                <div class="row " style="justify-content: center;margin-top:30px;">
+                  <div class="comments comment-reply" style="width:848px;display: flex;padding-left: 50px;">
+                    <div class="col-10" style="padding: 0px;">
+                      <div style="display: flex;line-height: 1 !important;">
+                        <div class="pro-info"><img src="../res/img/pro3.jpg" style="width: 50px;height: 50px;"></div>
+                        <div style="padding: 0px 10px 0px 10px;">
+                          <span class="font-xs" style="line-height:1;color:#444"><strong>Sunny</strong></span>
+                          <span class="font-xxs" style="line-height:0.9;color:#777;margin-left:20px">2 hours ago</span>
+                          <span class="font-xs" style="color:#333;">
+                            <p style="margin-top:10px;">younger than five are often they are too young to know how to properly gargle
+                            </p>
+                          </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-thumb-up-button font-xs hover-icon" style="margin:0px;"></i> 0 |</span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;"><i class="flaticon-hands font-xs hover-icon" style="margin:0px;"></i> 0 <b>&#183;</b> </span>
+                          <span class="font-xs " style="line-height:0.9;color:#777;margin-right:4px;">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2" style="text-align:right;">
+                      <div class="comment-setting"><i class="flaticon-button-of-three-vertical-squares font-xs" style="margin:0px;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Comment 3 reply -->
                 <div class="row" style="justify-content: center;margin-top:15px;">
                   <div style="height:1px;width:848px;background:#ddd;"></div>
                 </div>
