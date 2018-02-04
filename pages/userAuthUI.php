@@ -96,7 +96,13 @@
   <!-- Main Body -->
   <div class="container-fluid row-centered" style="height: calc(100vh - 62px); margin: 0;">
     <div class = "row col-md-5 col-sm-8 col-xs-12 col-centered container-fluid" style = "margin-top: 10px; box-shadow: 0 0 5px gray; padding: 25px;">
-      <button class = "col-sm-6 my-active sign-in-overall"><i class = "flaticon-login"></i>Sign In</button><button class = "col-sm-6 my-disabled sign-up-overall"><i class = "flaticon-add-contact"></i>Sign Up</button>
+      <!--<button class = "col-sm-6 my-active sign-in-overall"><i class = "flaticon-login"></i>Sign In</button><button class = "col-sm-6 my-disabled sign-up-overall"><i class = "flaticon-add-contact"></i>Sign Up</button>-->
+      <div class = "row" style = "margin-left: 15px; margin-right: 25px;">
+        <div style = "width: 50%; float: left; text-align: left;"><span style = "font-size: 180%;">Sign in</span><br>
+        <small>to continue with Tulsi</small></div>
+        <div style = "width: 50%; float: left; text-align: right; line-height: 60px;">Sign up</div>
+      </div>
+
       <div class = "form-1 row col-md-12 container-fluid" id = "contact">
 
           <div class="group">
