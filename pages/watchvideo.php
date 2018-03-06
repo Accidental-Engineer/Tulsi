@@ -91,6 +91,16 @@
 
     </script>
     <!-- End of Script-->
+
+    <style media="screen">
+      .vid-card-watch{
+        min-width: 200px !important;
+        width: 200px !important;
+      }
+      .vid-thumbnail-watch{
+        width: 200px !important;
+      }
+    </style>
   </head>
   <body onkeypress="return myKeyPress(event)">
 
@@ -313,6 +323,165 @@
                   </div>
                 </div>
 
+                <!-- End of Description -->
+                <div class="row" style="justify-content: center;margin-top:15px;">
+                  <div style="width:848px;">
+                    <div class="row" style="width:100%;">
+                      <div class="col-12">
+                        <span class="font-s">Comming Up</span>
+                      </div>
+                    </div>
+                    <div class="row" style="width:100%;">
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12" style="line-height: 50px;">
+                        <div class="vid-card vid-card-watch">
+                          <div class="">
+                            <img src="../res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail vid-thumbnail-watch">
+                          </div>
+                          <div style="height:40.935%;padding-top: 5px;">
+                            <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                              The perfect treatment for diabetes and weight loss
+                            </div>
+                            <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                              <br>Dr. K.P. Singh
+                            </div>
+                            <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                              1.2K views <b>&#183;</b> 3 months ago
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
                 <div class="row" style="justify-content: center;margin-top:15px;">
                   <div style="width:848px;display: flex;">
                     <div class="col-12" style="padding: 0px;">
@@ -432,8 +601,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Comment  2 reply -->
-                <!-- Comment  2 reply -->
+                <!-- End of Comment 2 reply -->
+                <!-- Comment 2 reply -->
                 <div class="row " style="justify-content: center;margin-top:30px;">
                   <div class="comments comment-reply" style="width:848px;display: flex;">
                     <div class="col-10" style="padding: 0px;">
@@ -457,8 +626,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Comment  2 reply -->
-                <!-- Comment  2 reply -->
+                <!-- End of Comment 2 reply -->
+                <!-- Comment 2 reply -->
                 <div class="row " style="justify-content: center;margin-top:30px;">
                   <div class="comments comment-reply" style="width:848px;display: flex;">
                     <div class="col-10" style="padding: 0px;">

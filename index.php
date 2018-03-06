@@ -1,3 +1,7 @@
+<?php
+require 'pdo/classes/Database.php';
+require 'lib/lib.php';
+$database = new Database;?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -257,22 +261,29 @@
                 <!-- Vid Cards -->
                 <div class="vid-slide" style="display: flex;position:relative;">
                   <!-- End new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
+                  <?php $q1 = "select * from video ";
+                  //$database->bind(":id",2);
+                  $rows = $database->resultset($q1);
+                  //print_r($rows);
+                  foreach ($rows as $row) {
+                   ?>
+                    <div class="vid-card">
+                      <div class="">
+                        <img src="<?php echo $row["thumbnail"]; ?> " alt="" class="vid-thumbnail">
+                      </div>
+                      <div style="height:40.935%;padding-top: 5px;">
+                        <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
+                          <?php echo $row["title"]; ?>
+                        </div>
+                        <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
+                          <br>Dr. K.P. Singh
+                        </div>
+                        <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
+                          <?php viewCount($row['views']);?> <b>&#183;</b> 3 months ago
+                        </div>
+                      </div>
                     </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        The perfect treatment for diabetes and weight loss
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br>Dr. K.P. Singh
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        1.2K views <b>&#183;</b> 3 months ago
-                      </div>
-                    </div>
-                  </div>
+                  <?php } ?>
                   <!-- End new card -->
                   <!-- End new card -->
                   <div class="vid-card">
@@ -381,5 +392,7 @@
     </div>
   </div>
   <!-- End of Main Body -->
+
+
   </body>
 </html>
