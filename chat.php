@@ -1,4 +1,5 @@
-<html lang="en" class="wf-proximanova-n7-active wf-proximanova-i7-active wf-proximanova-n1-active wf-proximanova-n6-active wf-proximanova-i6-active wf-proximanova-n4-active wf-proximanova-i4-active wf-proximanova-n3-active wf-active" wcxlastxpos="1038" wcxlastypos="53" wcxlasttime="1520336337572" wcxdocid="1520336052760" wcxlastmousedownxpos="158" wcxlastmousedownypos="99" wcxlastmouseupxpos="1028"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
   <link rel="shortcut icon" type="image/x-icon" href="./res/img/icon.png">
@@ -57,9 +58,9 @@
   				<li class="contact active">
   					<div class="wrap">
   						<span class="contact-status busy"></span>
-  						<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  						<img src="./res/img/icon.png" alt="">
   						<div class="meta">
-  							<p class="name">Harvey Specter</p>
+  							<p class="name">Tulsi</p>
   							<p class="preview">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
   						</div>
   					</div>
@@ -153,8 +154,8 @@
   	</div>
   	<div class="content">
   		<div class="contact-profile">
-  			<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
-  			<p>Harvey Specter</p>
+  			<img src="./res/img/icon.png" alt="">
+  			<p>Tulsi</p>
   			<div class="social-media">
   				<i class="fa fa-facebook" aria-hidden="true"></i>
   				<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -162,17 +163,17 @@
   			</div>
   		</div>
   		<div class="messages">
-  			<ul>
+  			<ul class="messages-body">
   				<li class="sent">
   					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
   					<p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
   				</li>
   				<li class="replies">
-  					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  					<img src="./res/img/icon.png" alt="">
   					<p>When you're backed against the wall, break the god damn thing down.</p>
   				</li>
   				<li class="replies">
-  					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  					<img src="./res/img/icon.png" alt="">
   					<p>Excuses don't win championships.</p>
   				</li>
   				<li class="sent">
@@ -180,11 +181,11 @@
   					<p>Oh yeah, did Michael Jordan tell you that?</p>
   				</li>
   				<li class="replies">
-  					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  					<img src="./res/img/icon.png" alt="">
   					<p>No, I told him that.</p>
   				</li>
   				<li class="replies">
-  					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  					<img src="./res/img/icon.png" alt="">
   					<p>What are your choices when someone puts a gun to your head?</p>
   				</li>
   				<li class="sent">
@@ -192,22 +193,74 @@
   					<p>What are you talking about? You do what they say or they shoot you.</p>
   				</li>
   				<li class="replies">
-  					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+  					<img src="./res/img/icon.png" alt="">
   					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
   				</li>
+          <li class="sent">
+  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
+  					<p>What are you talking about? You do what they say or they shoot you.</p>
+  				</li>
+  				<li class="replies">
+  					<img src="./res/img/icon.png" alt="">
+  					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+  				</li>
+          <li class="sent">
+  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
+  					<p>What are you talking about? You do what they say or they shoot you.</p>
+  				</li>
+  				<li class="replies">
+  					<img src="./res/img/icon.png" alt="">
+  					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+  				</li>
+          <!-- <li class="sent question-li">
+            <div class="questions">
+              <p class="question" style="float:none;col">
+                Do you have fever?
+              </p>
+              <br>
+              <span>
+                <button class="qbtn" onclick="submit(this)" >Yes</button>
+              </span>
+              <br>
+              <span>
+                <button class="qbtn" onclick="submit(this)">No</button>
+              </span>
+              <br>
+            </div>
+  				</li> -->
   			</ul>
+        <ul class="questions-body">
+           <li class="sent question-li">
+            <div class="questions">
+              <p class="question" style="float:none;col">
+                Do you have fever?
+              </p>
+              <br>
+              <span>
+                <button class="qbtn" onclick="submit(this)" >Yes</button>
+              </span>
+              <br>
+              <span>
+                <button class="qbtn" onclick="submit(this)">No</button>
+              </span>
+              <br>
+            </div>
+  				</li>
+  			</ul>
+
   		</div>
-  		<div class="message-input">
+  		<!-- <div class="message-input">
   			<div class="wrap">
   			<input type="text" placeholder="Write your message...">
   			<i class="fa fa-paperclip attachment" aria-hidden="true"></i>
   			<button class="submit" _vimium-has-onclick-listener=""><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
   			</div>
-  		</div>
+  		</div> -->
   	</div>
   </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script>$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+    $(".messages").animate({ scrollTop: $(document).height() }, "10");
 
     $("#profile-img").click(function() {
     	$("#status-options").toggleClass("active");
@@ -262,6 +315,44 @@
         return false;
       }
     });
+
+    function submit(e){
+      console.log(e.innerHTML);
+      message = e.innerHTML;
+    	if($.trim(message) == '') {
+    		return false;
+    	}
+    	$('<li class="sent"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages .messages-body'));
+    	$('.message-input input').val(null);
+    	$('.contact.active .preview').html('<span>You: </span>' + message);
+      // $(".questions-body").animate({"opacity":"0"},0,function(){
+      //   $(".questions-body").css("display","none");
+      // });
+
+      $.ajax({
+        url: "chat_process.php",
+        type : "POST" ,
+        data : "userResponse="+message,
+        success: function(result){
+          console.log(result);
+          var jsonObj = JSON.parse(result);
+          console.log(jsonObj.options.length);
+          var e = $('.questions');
+          var innerHTML = '';//'<p class="question" style="float:none;col">'+jsonObj.question+'</p><br>';
+          $('<li class="replies"><img src="./res/img/icon.png" alt="" /><p>' + jsonObj.question + '</p></li>').appendTo($('.messages .messages-body'));
+          $('.message-input input').val(null);
+          $('.contact.active .preview').html('' + jsonObj.question);
+          for (var i = 0; i < jsonObj.options.length; i++) {
+            innerHTML += '<span><button class="qbtn" onclick="submit(this)" >'+jsonObj.options[i]+'</button></span><br>'
+          }
+          e.html(innerHTML);
+
+        }
+    });
+      $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight")}, "fast");
+      console.log($(".messages").scrollTop());
+      //$(".question-li").
+    }
     </script>
     <div id="sbi_camera_button" style="width: 29px !important; height: 27px !important; top: 56px !important; left: 358px !important; display: none !important;">
     </div>

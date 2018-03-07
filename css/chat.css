@@ -3,7 +3,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #27ae60;
   font-family: "proxima-nova", "Source Sans Pro", sans-serif;
   font-size: 1em;
   letter-spacing: 0.1px;
@@ -21,6 +20,18 @@ body {
   min-height: 300px;
   max-height: 720px;
   background: #E6EAEA;
+}
+.question{
+  border: 1px solid black !important;
+  border-radius: 50px !important;
+  padding: 5px !important;
+  width: 500px !important;
+  float: none !important;
+  background: transparent !important;
+  color: #555 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  font-family: monospace !important;
 }
 @media screen and (max-width: 360px) {
   #frame {
@@ -571,19 +582,32 @@ body {
   margin-bottom: 20px;
 }
 #frame .content .messages ul li.sent img {
-  margin: 6px 8px 0 0;
+
+  margin: 6px 0 0 8px;
+  float: right;
 }
 #frame .content .messages ul li.sent p {
   background: #435f7a;
   color: #f5f5f5;
+  float: right;
+}
+
+#frame .content .messages ul li.sent .questions {
+  text-align: right;
+
+}
+#frame .content .messages ul li.sent span {
+
+  color: #f5f5f5;
+
 }
 #frame .content .messages ul li.replies img {
-  float: right;
-  margin: 6px 0 0 8px;
+  float: left;
+  margin: 6px 8px 0 0;
 }
 #frame .content .messages ul li.replies p {
   background: #f5f5f5;
-  float: right;
+  float: left;
 }
 #frame .content .messages ul li img {
   width: 22px;
@@ -597,6 +621,23 @@ body {
   max-width: 205px;
   line-height: 130%;
 }
+.qbtn{
+  margin:5px 0;
+  border: 1px solid green;
+  border-radius: 15px;
+  padding: 5px 15px 5px 15px;
+  color: #435f7a;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+}
+.qbtn:hover{
+  color:#eee;
+  background:green;
+  cursor: pointer;
+}
+
+
 @media screen and (min-width: 735px) {
   #frame .content .messages ul li p {
     max-width: 300px;
