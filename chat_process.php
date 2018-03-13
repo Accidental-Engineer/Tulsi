@@ -10,6 +10,7 @@ if (isset($_POST['userResponse']) && $_POST['userResponse'] !="") {
   );
   //$val = rand(10,100);
   echo $JSON_responce[rand(0,6)];
+  //echo $_POST['userResponse'];
 }
 
 ?>
