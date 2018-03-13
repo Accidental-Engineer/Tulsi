@@ -237,7 +237,7 @@
               </p>
               <br>
               <span>
-                <button class="qbtn" onclick="submit(this)" >Yes</button>
+                <button class="qbtn" onclick="submit(this)">Yes</button>
               </span>
               <br>
               <span>
@@ -317,7 +317,7 @@
     });
 
     function submit(e){
-      console.log(e.innerHTML);
+      //console.log(e.innerHTML);
       message = e.innerHTML;
     	if($.trim(message) == '') {
     		return false;
@@ -336,7 +336,7 @@
         success: function(result){
           console.log(result);
           var jsonObj = JSON.parse(result);
-          console.log(jsonObj.options.length);
+          //console.log(jsonObj.options.length);
           var e = $('.questions');
           var innerHTML = '';//'<p class="question" style="float:none;col">'+jsonObj.question+'</p><br>';
           $('<li class="replies"><img src="./res/img/icon.png" alt="" /><p>' + jsonObj.question + '</p></li>').appendTo($('.messages .messages-body'));
