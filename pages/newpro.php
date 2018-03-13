@@ -94,7 +94,7 @@ session_start();
     text-align: center;
   }
   .profile-designation{
-    font-size: 110%;
+    font-size: 90%;
     text-align: center;
   }
   .bar{
@@ -155,12 +155,18 @@ session_start();
       <div class = "profile-pic-container" style = ""><img src = "https://lh6.googleusercontent.com/-ZQnzMVcsF80/AAAAAAAAAAI/AAAAAAAAAIM/tF0uN5Kjek0/s96-c/photo.jpg"></div>
       <div class = "profile-name">SHIVAM<br>KUMAR</div>
       <hr class = "bar">
-      <div class = "profile-designation">Web<br>Developer</div>
+      <div class = "profile-designation">Neurologist</div>
       <div class = "utility-icons"><i class = "fa fa-upload"></i><i class = "fa fa-flag"></i><i class = "fa fa-eye"></i></div>
       <hr class = "bar">
     </div>
     <div class = "col-md-9 col-sm-8 col-xs-12" style = "background: red; padding-left: 10px; padding-right: 10px;">
-      <div class = "profile-info-container"></div>
+      <div class = "profile-info-container">
+        <div class = "row" style = "box-shadow: 0 0 3px green;">
+          <div class = "profile-name">Hello, I am SHIVAM KUMAR.</div>
+          <div class = "profile-designation"><br>Neurologist</div>
+        </div>
+        <div class = "row"></div>
+      </div>
     </div>
   </div>
   </div>
