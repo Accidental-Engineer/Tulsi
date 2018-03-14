@@ -319,6 +319,11 @@
     function submit(e){
       //console.log(e.innerHTML);
       message = e.innerHTML;
+      var id = e.getAttribute("data-id");
+      console.log(id);
+      if (id == null) {
+        id = "-1";
+      }
     	if($.trim(message) == '') {
     		return false;
     	}
@@ -330,9 +335,9 @@
       // });
 
       $.ajax({
-        url: "chat_process.php",
+        url: "test.php",
         type : "POST" ,
-        data : "userResponse="+message,
+        data : "userResponse="+message+"&id="+id,
         success: function(result){
           console.log(result);
           var jsonObj = JSON.parse(result);
@@ -342,8 +347,8 @@
           $('<li class="replies"><img src="./res/img/icon.png" alt="" /><p>' + jsonObj.question + '</p></li>').appendTo($('.messages .messages-body'));
           $('.message-input input').val(null);
           $('.contact.active .preview').html('' + jsonObj.question);
-          for (var i = 0; i < jsonObj.options.length; i++) {
-            innerHTML += '<span><button class="qbtn" onclick="submit(this)" >'+jsonObj.options[i]+'</button></span><br>'
+          for (key in jsonObj.options ) {
+            innerHTML += '<span><button class="qbtn" data-id="'+jsonObj.options[key]+'" onclick="submit(this)" >'+key+'</button></span><br>'
           }
           e.html(innerHTML);
 
