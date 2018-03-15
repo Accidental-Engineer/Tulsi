@@ -7,8 +7,10 @@ $client = ClientBuilder::create()
     ->build();
 
 if (isset($_POST['userResponse']) && $_POST['userResponse'] !="") {
-  if ($_POST['id']=="-1") {
-    $q_id = "match (s:SYMPTOM)-[:OPTION]->(q:QUESTION) return ID(q) as id";
+  //echo $_POST['id'];
+  if ($_POST['id']=="symptom") {
+    $symptom = $_POST['userResponse'];
+    $q_id = "match (s:SYMPTOM)-[:OPTION]->(q:QUESTION) where s.value='".$symptom."' return ID(q) as id";
     $result_id = $client->run($q_id);
     $id = $result_id->getRecord()->value('id');
   }

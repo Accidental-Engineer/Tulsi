@@ -164,53 +164,9 @@
   		</div>
   		<div class="messages">
   			<ul class="messages-body">
-  				<li class="sent">
-  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-  					<p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
-  				</li>
   				<li class="replies">
   					<img src="./res/img/icon.png" alt="">
-  					<p>When you're backed against the wall, break the god damn thing down.</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>Excuses don't win championships.</p>
-  				</li>
-  				<li class="sent">
-  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-  					<p>Oh yeah, did Michael Jordan tell you that?</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>No, I told him that.</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>What are your choices when someone puts a gun to your head?</p>
-  				</li>
-  				<li class="sent">
-  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-  					<p>What are you talking about? You do what they say or they shoot you.</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
-  				</li>
-          <li class="sent">
-  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-  					<p>What are you talking about? You do what they say or they shoot you.</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
-  				</li>
-          <li class="sent">
-  					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-  					<p>What are you talking about? You do what they say or they shoot you.</p>
-  				</li>
-  				<li class="replies">
-  					<img src="./res/img/icon.png" alt="">
-  					<p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+  					<p>Hey Tarun, What symptom your are having?</p>
   				</li>
           <!-- <li class="sent question-li">
             <div class="questions">
@@ -232,17 +188,10 @@
         <ul class="questions-body">
            <li class="sent question-li">
             <div class="questions">
-              <p class="question" style="float:none;col">
-                Do you have fever?
-              </p>
-              <br>
               <span>
-                <button class="qbtn" onclick="submit(this)">Yes</button>
+                <input type="text" class="qinput" placeholder="Type your symptom" ></input>
               </span>
-              <br>
-              <span>
-                <button class="qbtn" onclick="submit(this)">No</button>
-              </span>
+              <span><button id="symptom" class="qbtn"  onclick="submit(this)" >Submit</button></span>
               <br>
             </div>
   				</li>
@@ -256,10 +205,20 @@
   			<button class="submit" _vimium-has-onclick-listener=""><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
   			</div>
   		</div> -->
-  	</div>
+      <div class="message-input dot-con" style="display:none;justify-content:center;align-items: center;    height: 35px;">
+        <div id="d1" class="dot"></div>
+        <div id="d2" class="dot"></div>
+        <div id="d3" class="dot"></div>
+        <div id="d4" class="dot"></div>
+        <div id="d5" class="dot"></div>
+      </div>
+
+  	  </div>
   </div>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
+    var k=1;
+    var d=0;
     $(".messages").animate({ scrollTop: $(document).height() }, "10");
 
     $("#profile-img").click(function() {
@@ -318,12 +277,19 @@
 
     function submit(e){
       //console.log(e.innerHTML);
-      message = e.innerHTML;
-      var id = e.getAttribute("data-id");
-      console.log(id);
-      if (id == null) {
-        id = "-1";
+
+      var id = e.getAttribute("id");
+      if (id == "symptom") {
+        id =e.getAttribute("id");
+        message = $(".qinput").val();
       }
+      else {
+        id =e.getAttribute("data-id");
+        message = e.innerHTML;
+      }
+      // if (id == null) {
+      //   id = "-1";
+      // }
     	if($.trim(message) == '') {
     		return false;
     	}
@@ -333,7 +299,9 @@
       // $(".questions-body").animate({"opacity":"0"},0,function(){
       //   $(".questions-body").css("display","none");
       // });
-
+      //console.log(id);
+      $(".dot-con").css("display","flex");
+      // $('.questions').html("");
       $.ajax({
         url: "test.php",
         type : "POST" ,
@@ -350,14 +318,39 @@
           for (key in jsonObj.options ) {
             innerHTML += '<span><button class="qbtn" data-id="'+jsonObj.options[key]+'" onclick="submit(this)" >'+key+'</button></span><br>'
           }
-          e.html(innerHTML);
-
+          e.html(innerHTML).promise().done(function(){
+            $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight")}, "fast");
+            $(".dot-con").css("display","none");
+          });
         }
     });
-      $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight")}, "fast");
-      console.log($(".messages").scrollTop());
+
       //$(".question-li").
     }
+    function symptom() {
+    }
+
+    setInterval(function(){
+      //console.log($("dot:nth-child("+k+")"));
+      $(".dot").css({"transform":"scale(1)","opacity":"0.5"});
+      $(".dot:nth-child("+k+")").css({"transform":"scale(1.7)","opacity":"1"});
+
+      if (d==0) {
+        k++;
+      }
+      else if(d==1){
+        k--;
+      }
+      if (k==6) {
+        d=1;
+        k = 4;
+      }
+      else if (k==0) {
+        d=0;
+        k=2;
+      }
+
+    }, 200);
     </script>
     <div id="sbi_camera_button" style="width: 29px !important; height: 27px !important; top: 56px !important; left: 358px !important; display: none !important;">
     </div>

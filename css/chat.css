@@ -621,9 +621,21 @@ body {
   max-width: 205px;
   line-height: 130%;
 }
-.qbtn{
+.qinput{
   margin:5px 0;
   border: 1px solid green;
+  border-radius: 15px;
+  padding: 5px 15px 5px 15px;
+  color: #435f7a;
+  font-size: 16px;
+  background: transparent;
+}
+.qinput:focus{
+  outline: none;
+}
+.qbtn{
+  margin:5px 0;
+  border-color:#6f93b5 ;
   border-radius: 15px;
   padding: 5px 15px 5px 15px;
   color: #435f7a;
@@ -633,10 +645,20 @@ body {
 }
 .qbtn:hover{
   color:#eee;
-  background:green;
+  background:#435f7a;
   cursor: pointer;
+  border: 2px solid #435f7a;
 }
 
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background: #435f7a;
+  margin: 0 10px;
+  transition: 0.1s;
+  opacity: 0.5;
+}
 
 @media screen and (min-width: 735px) {
   #frame .content .messages ul li p {
@@ -660,6 +682,7 @@ body {
   padding: 11px 32px 10px 8px;
   font-size: 0.8em;
   color: #32465a;
+
 }
 @media screen and (max-width: 735px) {
   #frame .content .message-input .wrap input {
