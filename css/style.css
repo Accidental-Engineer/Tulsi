@@ -265,6 +265,24 @@ nav li {
 .comment-reply{
 	padding-left: 50px;
 }
+#myProgress {
+	width: 100%;
+	background-color: #ddd;
+}
+.progressSpeed{
+	text-align: center;
+min-width: 100vw;
+position: absolute;
+left: 0;
+color: #555;
+}
+.progress-bar{
+	background-size: 1rem 1rem !important;
+	-webkit-transition: width .6s ease; */
+  transition: width .6s ease;
+	-webkit-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
 @media screen and (max-width: 1200px){
   .vid-row-title, .vid {
     max-width: 872px;

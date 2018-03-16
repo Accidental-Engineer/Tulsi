@@ -253,8 +253,8 @@
               <div class="container-fluid">
                 <div class="row" style="justify-content: center;">
                   <div style="width:848px;display: flex;justify-content: center;">
-                    <video  id="vid1" width="848" height="477" controls controlsList="fullscreen nodownload noremoteplayback" poster="../res/img/icon.png" style="background:black;">
-                      <source src="../res/videos/des.mp4"  type="video/mp4"  controlsList="nodownload" />
+                    <video  id="vid1" width="848" height="477" controls controlsList="fullscreen nodownload noremoteplayback"  style="background:black;" preload="none">
+                      <source src="../res/videos/des.mp4"  type="video/mp4"  controlsList="nodownload" autostart="false"/>
                          Your browser does not support the video tag.
                     </video>
                   </div>
