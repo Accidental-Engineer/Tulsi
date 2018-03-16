@@ -35,20 +35,47 @@
     .form-2{
       display: none;
     }
+    .sign-in-overall, .sign-up-overall, input[type='submit']{
+      cursor: pointer;
+    }
     </style>
     <script>
       $(document).ready(function(){
           $(".sign-in-overall").click(function(){
-            $(this).removeClass("my-disabled").addClass("my-active");
-            $(".sign-up-overall").removeClass("my-active").addClass("my-disabled");
             $(".form-2").hide();
             $(".form-1").show();
+            $("#error").text("");
           });
           $(".sign-up-overall").click(function(){
-            $(this).removeClass("my-disabled").addClass("my-active");
-            $(".sign-in-overall").removeClass("my-active").addClass("my-disabled");
             $(".form-1").hide();
             $(".form-2").show();
+            $("#error").text("");
+          });
+          $("input[value='Login']").click(function(){
+            $.post("signIn.php",
+            {
+                email: $("input[name='sign-in-email']").val(),
+                password: $("input[name='sign-in-pass']").val()
+            },
+            function(data, status){
+                if(status == "success"){
+                  switch(data){
+                    case '0':
+                      $("#error").text("Please enter a valid email.");
+                      break;
+                    case '1':
+                      $("#error").text("Email and password don't match.");
+                      break;
+                    case '2':
+                      window.open('newpro.php', '_self');
+                      break;
+                    default:
+                      $("#error").text("An unknown error occurred.");
+                  }
+                }else $("#error").text("Please check your network.");
+                //console.log(status + data);
+            });
+
           });
       });
 
@@ -97,19 +124,21 @@
   <div class="container-fluid row-centered" style="height: calc(100vh - 62px); margin: 0;">
     <div class = "row col-md-5 col-sm-8 col-xs-12 col-centered container-fluid" style = "margin-top: 10px; box-shadow: 0 0 5px gray; padding: 25px;">
       <!--<button class = "col-sm-6 my-active sign-in-overall"><i class = "flaticon-login"></i>Sign In</button><button class = "col-sm-6 my-disabled sign-up-overall"><i class = "flaticon-add-contact"></i>Sign Up</button>-->
-      <div class = "row" style = "margin-left: 15px; margin-right: 25px;">
-        <div style = "width: 50%; float: left; text-align: left;"><span style = "font-size: 180%;">Sign in</span><br>
-        <small>to continue with Tulsi</small></div>
-        <div style = "width: 50%; float: left; text-align: right; line-height: 60px;">Sign up</div>
-      </div>
+
+      <div id = "error" style = "line-height: 30px; min-width: 100%; background: rgba(255, 0, 0, 0.5); border-radius: 5px; color: #eee; text-align: center;"></div>
 
       <div class = "form-1 row col-md-12 container-fluid" id = "contact">
-
+          <div class = "row" style = "margin-left: 15px; margin-right: 25px; min-width: 100%;">
+            <div style = "width: 50%; float: left; text-align: left;"><span style = "font-size: 180%;">Sign in</span><br>
+            <small>to continue with Tulsi</small></div>
+            <div style = "width: 50%; box-sizing: border-box; padding-right: 10%; float: left; text-align: right; line-height: 60px;" class = 'sign-up-overall'>Sign up</div>
+          </div>
+          <hr style = "padding: 15px; width: 50px;">
           <div class="group">
-            <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Email</label>
+            <input required="" name = "sign-in-email" type="text"><span class="highlight"></span><span class="bar"></span><label>Email</label>
           </div>
           <div class="group">
-            <input required="" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
+            <input required="" name = "sign-in-pass" type="password"><span class="highlight"></span><span class="bar"></span><label>Password</label>
           </div>
           <span><small>Forgot Password?</small></span><!--<i class = "flaticon-login"></i>-->
           <input id="sendMessage" name="sendMessage" type="submit" value="Login">
@@ -152,7 +181,12 @@
 
 
       <div class = "form-2 row col-md-12 container-fluid" id = "contact">
-
+          <div class = "row" style = "margin-left: 15px; margin-right: 25px; min-width: 100%;">
+            <div style = "width: 50%; float: left; text-align: left;"><span style = "font-size: 180%;">Sign up</span><br>
+            <small>to continue with Tulsi</small></div>
+            <div style = "width: 50%; box-sizing: border-box; padding-right: 10%; float: left; text-align: right; line-height: 60px;" class = 'sign-in-overall'>Sign in</div>
+          </div>
+          <hr style = "padding: 15px; width: 50px;">
           <div class="group">
             <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>First Name</label>
           </div>

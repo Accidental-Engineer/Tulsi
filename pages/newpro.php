@@ -110,6 +110,15 @@ session_start();
     min-height: 50px;
     border-top: 5px solid #1abc9c;
   }
+  .prolink{
+    padding-right: 15px;
+    letter-spacing: 2px;
+    color: #32465a;
+  }
+  .prolink:hover{
+    color: #1abc9c;
+    text-decoration: none;
+  }
   </style>
 </head>
 <body>
@@ -159,15 +168,29 @@ session_start();
       <div class = "utility-icons"><i class = "fa fa-upload"></i><i class = "fa fa-flag"></i><i class = "fa fa-eye"></i></div>
       <hr class = "bar">
     </div>
-    <div class = "col-md-9 col-sm-8 col-xs-12" style = "background: red; padding-left: 10px; padding-right: 10px;">
-      <div class = "profile-info-container">
-        <div class = "row" style = "box-shadow: 0 0 3px green;">
-          <div class = "profile-name">Hello, I am SHIVAM KUMAR.</div>
-          <div class = "profile-designation"><br>Neurologist</div>
-        </div>
-        <div class = "row"></div>
+    <div class = "col-md-9 col-sm-8 col-xs-12">
+      <div style = "width: 91%; margin-left: 2%; margin-right: 7%; border-top: 5px solid #1abc9c;">
+          <div style = "min-width: 100%; padding-top: 15px; padding-bottom: 15px;"><a href = "#" class = "prolink">Profile</a><a href = "#" class = "prolink">Videos</a><a href = "#" class = "prolink">Blog</a><a href = "#" class = "prolink">Contact</a></div>
+          <div style = "text-align: right; font-size: 130%; letter-spacing: 2px;">PROFILE</span>&nbsp;&nbsp;<i class = "fa fa-user-circle" aria-hidden = "true"></i></div>
+          <div class = "profile-info container-fluid" style = "background: #fbfbfb;">
+            <div class = "row">
+              <div class = "col-md-6 col-xs-12" style = "text-align: center; border-right: 2px solid #ecf0f1; padding: 15px;">
+                <h5><i class = "fa fa-user-circle"></i>&nbsp;&nbsp;Basic Information</h5>
+                <small>Shivam Kumar<br>M.Sc - Anatomy<br>Genereal Physician<br>12 years experience<br></small>
+              </div>
+              <div class = "col-md-6 col-xs-12" style = "text-align: center; border-left: 2px solid #ecf0f1; padding: 10px;">
+                <h5><i class = "fa fa-info-circle"></i>&nbsp;&nbsp;Profile Statement</h5>
+                <p style = "text-align: justify;">I have served in variety of clinical branches and have extensive clinical experience. I have worked in the Department of Surgery and Department of Gynacology for five years.</p>
+              </div>
+            </div>
+          </div>
+          <div style = "text-align: right; font-size: 130%; letter-spacing: 2px;">VIDEOS</span>&nbsp;&nbsp;<i class = "fa fa-image" aria-hidden = "true"></i></div>
+          <div class = "profile-info" style = "background: #fbfbfb;">Videos: dsjghjxksl</div>
+          <div style = "text-align: right; font-size: 130%; letter-spacing: 2px;">BLOG</span>&nbsp;&nbsp;<i class = "fa fa-comment" aria-hidden = "true"></i></div>
+          <div class = "profile-info" style = "background: #fbfbfb;">Blog: dsjghjxksl</div>
       </div>
     </div>
+
   </div>
   </div>
 </body>

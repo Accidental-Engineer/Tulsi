@@ -23,7 +23,7 @@
     /*input[type="text"]:focus::-webkit-input-placeholder {
       color: white;
     }*/
-    
+
     #login-form{
     height: 132px;
     width: 270px;
@@ -62,7 +62,7 @@
      #google-sign-in{
        background: #4285f4;
      }
-     .sign-in-overall, .sign-up-overall{
+     /*.sign-in-overall, .sign-up-overall{
        background: #00efaf;
        height: 40px;
        color: white;
@@ -73,7 +73,7 @@
        outline: 0;
      }
      .sign-up-overall{
-       background: #ef00c5; /* #f15922 */
+       background: #ef00c5; 
      }
      .my-active{
        opacity: 1;
@@ -82,7 +82,7 @@
      .my-disabled{
        opacity: 0.6;
        box-shadow: none;
-     }
+     }*/
 
      #contact {
        margin-top: 40px;
