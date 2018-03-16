@@ -623,17 +623,17 @@ body {
 }
 .qbtn{
   margin:5px 0;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   border-radius: 15px;
   padding: 5px 15px 5px 15px;
   color: #435f7a;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   background: transparent;
 }
 .qbtn:hover{
   color:#eee;
-  background:green;
+  background:#435f7a;
   cursor: pointer;
 }
 

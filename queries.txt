@@ -3,7 +3,7 @@ CREATE (m:QUESTION {value: "Is your headache mainly located on one or both sides
 CREATE (k:QUESTION {value: "Is it a throbbing headache?"})
 CREATE (p:QUESTION {value: "How does bending forward affect you?"})
 CREATE (r:QUESTION {value: "How would you describe the intensity of your headache?"})
-CREATE (x:QUESTION {value: "Did you suffer a head injury before your first symptom occured?"})
+CREATE (x:QUESTION {value: "Did you suffer a head injury before your first symptom occurred?"})
 CREATE (y:QUESTION {value: "Is your scalp sore when touched or pressed?"})
 CREATE (z:QUESTION {value: "Do you have pain in the bones or skin around your eye socket?"})
 CREATE (v:QUESTION {value: "Have you recently been injured or had a fall?"})
