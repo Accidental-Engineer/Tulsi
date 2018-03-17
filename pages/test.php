@@ -1,3 +1,4 @@
 <?php
-var_dump(extension_loaded('curl'));
- ?>
+session_start();
+
+print_r( $_SESSION['data']); ?>

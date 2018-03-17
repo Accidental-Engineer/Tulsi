@@ -76,6 +76,8 @@ class Database
     $this->execute($query, $bind);
     return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-
+  public function lastId(){
+    return $this->dbh->lastInsertId();
+  }
 }
 ?>

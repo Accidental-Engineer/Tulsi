@@ -7,11 +7,13 @@ $post = @filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 if (@$post['submit']==true) {
   $title=$post['title'];
   $body = $post['body'];
-  $q = "INSERT INTO posts (title , body) VALUE (:title, :body)";
+  $q = "INSERT INTO posts (title , body) VALUES (:title, :body)";
+
   //$database->bind(":title",$title);
   //$database->bind(":body",$body);
   $bind = array(":title"=>$title, ":body"=>$body);
   $database->execute($q , $bind);
+  echo $database->lastId();
 }
 $q1 = "select * from posts ";
 //$database->bind(":id",2);

@@ -283,6 +283,68 @@ color: #555;
 	-webkit-animation: progress-bar-stripes 2s linear infinite;
     animation: progress-bar-stripes 2s linear infinite;
 }
+.settings{
+	width:40px;
+	height:40px;
+}
+.profile_img{
+	width: 100%;
+	overflow:hidden;
+	border-radius: 20px;
+}
+.profile_img:hover{
+	cursor: pointer;
+}
+#setting_li{
+	cursor: auto;
+}
+.upload-file{
+	width: 80%;
+	height: 80%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.file-upload-text{
+	font-size: 20px;
+	color:#333;
+	position: relative;
+	top: -20px;
+}
+.upload-main{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+.file-upload-container{
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+.no-outline{
+		cursor: pointer;
+}
+#myForm{
+	opacity: 0;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: 200px;
+}
+.no-outline:focus{
+	outline: none;
+	border:none;
+
+}
+
 @media screen and (max-width: 1200px){
   .vid-row-title, .vid {
     max-width: 872px;

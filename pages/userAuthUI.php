@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['logged_in'])):
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -73,7 +77,7 @@
                       $("#error").text("An unknown error occurred.");
                   }
                 }else $("#error").text("Please check your network.");
-                //console.log(status + data);
+                console.log(status + data);
             });
 
           });
@@ -214,3 +218,9 @@
   <!-- End of Main Body -->
   </body>
 </html>
+<?php
+else:
+    header('Location: ../index.php');
+    die();
+    endif
+    ?>
