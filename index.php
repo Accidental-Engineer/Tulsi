@@ -3,7 +3,13 @@ session_start();
 require 'pdo/classes/Database.php';
 require 'lib/lib.php';
 $database = new Database;
-include "./lib/header.php";?>
+include "./lib/header.php";
+$Recent_Uploads_q = "SELECT d.*,v.*,v.date_time as date_commented, concat('Dr. ',u.first_name,' ',u.last_name) as name FROM video v, doctor d, user u Where v.doctor_id = d.id AND d.user_id=u.id  ORDER BY v.date_time LIMIT 6;";
+$Most_Popular_q = "SELECT d.*,v.*,v.date_time as date_commented, concat('Dr. ',u.first_name,' ',u.last_name) as name , (SELECT count(value) FROM sentiment WHERE item_id = v.item_id AND value = 1) as likes FROM video v, doctor d, user u Where v.doctor_id = d.id AND d.user_id=u.id  ORDER BY v.views DESC, likes DESC LIMIT 6;";
+$Trending_q = "SELECT d.*,v.*,v.date_time as date_commented, concat('Dr. ',u.first_name,' ',u.last_name) as name FROM video v, doctor d, user u Where v.doctor_id = d.id AND d.user_id=u.id  ORDER BY v.views DESC, v.date_time DESC LIMIT 6;";
+$Most_Liked_q = "SELECT d.*,v.*,v.date_time as date_commented, concat('Dr. ',u.first_name,' ',u.last_name) as name,(SELECT count(value) FROM sentiment WHERE item_id = v.item_id AND value = 1) as likes FROM video v, doctor d, user u Where v.doctor_id = d.id AND d.user_id=u.id  ORDER BY likes DESC LIMIT 6;";
+$row_type = array('Recent Uploads' => $Recent_Uploads_q, 'Most Popular' => $Most_Popular_q, 'Trending' => $Trending_q, 'Most Liked'=> $Most_Liked_q );
+?>
   <!-- Main Body -->
   <div class="container-fluid" style="height: calc(100vh - 62px);">
     <div class="row" style="height:100%">
@@ -53,11 +59,12 @@ include "./lib/header.php";?>
       </div>
       <!-- End of Side Menu -->
       <div class="wide" id="container-vid">
-        <!-- Videos Row 1-->
+        <?php foreach ($row_type as $key => $value) { ?>
+        <!-- Videos Rows -->
         <div class="container vid-row" style="margin-top: 20px;display: flex;justify-content: center;flex-direction: row;flex-wrap: wrap;" >
           <div class="row vid-row-title">
             <div class="col-12 font-m no-pad" style="display:inline;text-align:left;">
-              News Feed
+              <?php echo $key; ?>
             </div>
           </div>
           <div class="row vid-inner-container" style="display:inline; margin:15px;">
@@ -74,9 +81,9 @@ include "./lib/header.php";?>
                 <!-- Vid Cards -->
                 <div class="vid-slide" style="display: flex;position:relative;">
                   <!-- End new card -->
-                  <?php $q1 = "select * from video ";
+                  <?php
                   //$database->bind(":id",2);
-                  $rows = $database->resultset($q1);
+                  $rows = $database->resultset($value);
                   //print_r($rows);
                   foreach ($rows as $row) {
                    ?>
@@ -89,104 +96,14 @@ include "./lib/header.php";?>
                           <?php echo $row["title"]; ?>
                         </div>
                         <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                          <br>Dr. K.P. Singh
+                          <br><?php echo $row["name"]; ?>
                         </div>
                         <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                          <?php viewCount($row['views']);?> <b>&#183;</b> 3 months ago
+                          <?php viewCount($row['views']);?> <b>&#183;</b> <?php echo timeAgo($row['date_commented']); ?>
                         </div>
                       </div>
                     </div>
                   <?php } ?>
-                  <!-- End new card -->
-                  <!-- End new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/di1.webp" alt="" class="vid-thumbnail">
-                    </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        The perfect treatment for diabetes and weight loss
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br>Dr. K.P. Singh
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        1.2K views <b>&#183;</b> 3 months ago
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End new card -->
-                  <!-- new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/di.webp" alt="" class="vid-thumbnail">
-                    </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        Expert Advise to Diabetics
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br>Dr. K.P. Singh
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        1.2K views <b>&#183;</b> 3 months ago
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End new card -->
-                  <!-- new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/deep.webp" alt="" class="vid-thumbnail">
-                    </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        Deep Learning Frameworks Compared
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br>Dr. N.P. Singh
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        4.6K views <b>&#183;</b> 1 day ago
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End new card -->
-                  <!-- new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/cold.webp" alt="" class="vid-thumbnail">
-                    </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        How to Cure a Cold Fast
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br>Dr. Joe Alex
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        1M views <b>&#183;</b> 2 year ago
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End new card -->
-                  <!-- new card -->
-                  <div class="vid-card">
-                    <div class="">
-                      <img src="./res/img/thumbnail/hair.webp" alt="" class="vid-thumbnail">
-                    </div>
-                    <div style="height:40.935%;padding-top: 5px;">
-                      <div style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;font-size: 01em;font-weight: bold;">
-                        What to eat for healthy hair
-                      </div>
-                      <div class="font-xxs" style="height:32px;line-height:16px;padding-left:2px;padding-right:10px;">
-                        <br> Dr. Rajput
-                      </div>
-                      <div class="font-xxs" style="line-height:16px;padding-left:2px;padding-right:10px;">
-                        17K views <b>&#183;</b> 8 months ago
-                      </div>
-                    </div>
-                  </div>
                   <!-- End new card -->
                 </div>
                 <!-- End of Vid Cards -->
@@ -199,8 +116,8 @@ include "./lib/header.php";?>
             </div>
           </div>
         </div>
-        <!-- End of Videos Row 1-->
-
+        <!-- End of Videos Rows-->
+        <?php } ?>
       </div>
     </div>
   </div>

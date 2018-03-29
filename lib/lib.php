@@ -1,6 +1,8 @@
 <?php
-//function for view count
 
+$categoryMap = array('category' => 0,'Health' => 1,'Life Style' => 2,'Aaurveda' => 3 );
+
+//function for view count
 function viewCount($val){
   if ($val>=0 && $val < 1000) {
     echo number_format((float)$val, 1, '.', '')." views";
@@ -14,6 +16,38 @@ function viewCount($val){
   if ($val>=1000000000) {
     echo number_format((float)$val/1000000000, 1, '.', '')."B views";
   }
+}
+
+//Time ago function
+function timeAgo($val){
+  $days = (time()-strtotime($val))/60/60/24;
+  if ($days < 1) {
+    $time = (time()-strtotime($val))/60/60;
+    if ($time*60 < 1) {
+      $time ="Just now";
+    }
+    elseif ($time < 1) {
+       $time = floor((time()-strtotime($val))/60);
+       $time .=" mins ago";
+    }
+    else {
+      $time = floor((time()-strtotime($val))/60/60);
+      $time .=" hours  ago";
+    }
+  }
+  elseif ($days < 30 && $days >= 1) {
+    $time = floor((time()-strtotime($val))/60/60/24);
+    $time .=" days  ago";
+  }
+  elseif ($days < 365 && $days >= 30) {
+    $time = floor((time()-strtotime($val))/60/60/24/30);
+    $time .=" months  ago";
+  }
+  elseif ($days > 365) {
+    $time = floor((time()-strtotime($val))/60/60/24/365);
+    $time .= " years  ago";
+  }
+  return $time;
 }
 
 //For video processing
@@ -86,12 +120,12 @@ function encodeVideo($file_config){
 
     $format = new FFMpeg\Format\Video\X264();
     $format->on('progress', function ($video, $format, $percentage) {
-      session_start();
+      @session_start();
       if ($_SESSION['vid_q']==3) {
         $percentage = ($_SESSION['vid_c']*33.33)+($percentage/3);
       }
       $_SESSION['progress_percent'] = ceil($percentage);
-      session_write_close();
+      @session_write_close();
     });
     $format->setAudioCodec("libmp3lame")
     		->setKiloBitrate($bitrate)
@@ -100,7 +134,7 @@ function encodeVideo($file_config){
     $video
         ->save($format,$save_location);
     $t = $_SESSION['vid_c'] ;
-    session_start();
+    @session_start();
     $_SESSION['vid_c'] = $t+1;
     }
     return 1;

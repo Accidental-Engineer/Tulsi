@@ -103,7 +103,7 @@
           <!-- End of Tulsi LOGO -->
           <!-- Tulsi Title -->
           <li class="nav-item">
-            <a class="navbar-brand" id="brand-title" href="#">Tulsi Care</a>
+            <a class="navbar-brand" id="brand-title" href="../">Tulsi Care</a>
           </li>
           <!-- End of Tulsi Tulsi -->
         </ul>

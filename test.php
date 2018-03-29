@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 use GraphAware\Neo4j\Client\ClientBuilder;
 $client = ClientBuilder::create()
-    ->addConnection('bolt', 'bolt://neo4j:9955040194@localhost:7687')
+    ->addConnection('bolt', 'bolt://neo4j:123@localhost:7687')
     ->build();
 if (isset($_POST['userResponse']) && $_POST['userResponse'] !="") {
   //echo $_POST['id'];

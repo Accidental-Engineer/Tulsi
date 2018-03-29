@@ -1,5 +1,6 @@
 <?php
 session_start();
+if (isset($_SESSION['logged_in'])) {
 include "../lib/lib.php";
 require '../pdo/classes/Database.php';
 $database = new Database;
@@ -21,7 +22,9 @@ if (isset($_POST['submit'])) {
           $item_q = "INSERT INTO item () VALUE ()";
           $database->execute($item_q);
           $item_id = $database->lastId();
+
           $user_id = $_SESSION['data']['id'];
+
           $doc_q = "SELECT doctor.id as id FROM `doctor` join `user` WHERE user.id = doctor.id and doctor.user_id = :id";
           $bind  = array(':id' => $user_id );
           $result = $database->resultset($doc_q,$bind);
@@ -32,13 +35,14 @@ if (isset($_POST['submit'])) {
           $video_q = "INSERT INTO video (`item_id`,`doctor_id`,`thumbnail`,`url_low`,`url_medium`,`url_high`) VALUES (:i_id, :d_id, :thumb, :low, :med, :high)";
           $bind_new = array(":i_id" => $item_id, ":d_id" => $doc_id, ":thumb" => $thumbnail, ":low" => $url.'low.mp4', ":med" => $url.'med.mp4', ":high" => $url.'high.mp4');
           $database->execute($video_q , $bind_new);
+          echo '{"success":1,message:"vedio conversion successful","vid_name":"'.$name.'"}';
         }
       }
       else {
-        echo "failed" ;
+        echo '{"success":1,message:"vedio conversion successful"}';
       }
     }
-}
+}else {
 include "../lib/header.php";
  ?>
     <!-- Main Body -->
@@ -166,7 +170,11 @@ include "../lib/header.php";
              forceSync :true,
              url : 'upload_video.php',
              success:function(responseText) {
-             // console.log(responseText);
+              console.log(responseText);
+              var data = JSON.parse(responseText);
+               if (data.success) {
+                 window.open("./video_studio.php?video_id="+data.vid_name , "_self");
+               }
             }
           });
           var progress = $(".progress");
@@ -177,7 +185,7 @@ include "../lib/header.php";
               url : "processing_update.php",
               type : "POST",
               success : function(result){
-                // console.log(result);
+                //console.log(result);
                 var data = JSON.parse(result);
 
                 if (data.progress > 0) {
@@ -198,7 +206,14 @@ include "../lib/header.php";
           },1000);
           function triger(){
             $('#submit').click();
+            $('.file-upload-container').html('<div style="text-align:center;color:#555;font-size:20px;">Uploading...</div>');
           }
       </script>
   </body>
 </html>
+<?php }
+}
+else{
+  header('Location: ../index.php');
+  die();
+}?>
