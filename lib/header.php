@@ -168,22 +168,39 @@
             <li id="setting_li" class="nav-item btn-group">
               <a  class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
                 <div class="settings" style="width:35px; height:35px;">
-                   <img class="profile_img" src="http://localhost/tulsicare/res/img/users/doctors/tarun.jpg" alt="profile" >
+                   <img class="profile_img" src="http://localhost/tulsicare/<?php echo $_SESSION['data']['profile_pic_url'] ?>" alt="profile" >
                 </div>
               </a>
                 <div class="dropdown-menu dropdown-menu-right" style="top:49px;">
                   <a class="dropdown-item" href="#">Update Profile</a>
-                  <a class="dropdown-item" href="#">Add Family Member</a>
                   <a class="dropdown-item" href="#">Clinical Record</a>
-                  <a class="dropdown-item" href="#">Subscriptions</a>
                   <a class="dropdown-item" href="#">Privacy Policy</a>
                   <a class="dropdown-item" href="#">Terms and Conditions</a>
                   <a class="dropdown-item" href="#">Support</a>
                   <a class="dropdown-item" href="#">FAQs</a>
                   <a class="dropdown-item" href="http://localhost/tulsicare/pages/logout.php">Sign Out</a>
                 </div>
-          <?php else: ?>
             </li>
+            <?php elseif (isset($_SESSION['data']) && $_SESSION['data']['user_type']==0): ?>
+              <li id="setting_li" class="nav-item btn-group">
+                <a  class="navbar-brand dark-icon dropdown-toggle-split no-pad-l no-pad-r" data-toggle="dropdown">
+                  <div class="settings" style="width:35px; height:35px;">
+                     <img class="profile_img" src="http://localhost/tulsicare/<?php echo $_SESSION['data']['profile_pic_url'] ?>" alt="profile" >
+                  </div>
+                </a>
+                  <div class="dropdown-menu dropdown-menu-right" style="top:49px;">
+                    <a class="dropdown-item" href="#">Update Profile</a>
+                    <a class="dropdown-item" href="#">Add Family Member</a>
+                    <a class="dropdown-item" href="#">Clinical Record</a>
+                    <a class="dropdown-item" href="#">Subscriptions</a>
+                    <a class="dropdown-item" href="#">Privacy Policy</a>
+                    <a class="dropdown-item" href="#">Terms and Conditions</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="#">FAQs</a>
+                    <a class="dropdown-item" href="http://localhost/tulsicare/pages/logout.php">Sign Out</a>
+                  </div>
+              </li>
+            <?php else: ?>
             <li class="nav-item active no-pad-l no-pad-r">
               <a class="nav-link" href="http://localhost/tulsicare/pages/userAuthUI.php" style="padding-left: 5px  !important;">SIGN IN</a>
             </li>
